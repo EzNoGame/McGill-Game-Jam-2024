@@ -119,3 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyValue: 1
+  _keyPressedSound: {fileID: 8300000, guid: 4974f3197cd0ca5feaa756bf772c1208, type: 3}

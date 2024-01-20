@@ -7,7 +7,7 @@ public class AudioSystem  : Singleton<AudioSystem>
     private float _mainVolume = 1;
     private float _sfxVolume = 1;
     private float _bgmVolume = 1;
-    private bool _isCrossfading = false;
+    private bool _isCrossfading = true;
     private int _crossFadeCounter = 0;
     private float _crossFadeTimer = 0;
 
@@ -47,7 +47,9 @@ public class AudioSystem  : Singleton<AudioSystem>
     public void PlaySFX(AudioClip clip)
     {
         if(clip != null)
+        {
             audioSources[_crossFadeCounter].PlayOneShot(clip, _mainVolume*_sfxVolume);
+        }
     }
 
     public void PlaySFX(AudioClip clip, float volume)
