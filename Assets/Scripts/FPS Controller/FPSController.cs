@@ -16,6 +16,11 @@ public class FPSController : Singleton<FPSController>
     private float _verticalVelocity = -9.8f;
     private Vector3 _movement;
 
+
+    private bool _controlEnabled;
+
+    public bool IsHiding;
+
     public float HorizontalMaxSpeed => _walkSpeed;
 
 
@@ -26,10 +31,16 @@ public class FPSController : Singleton<FPSController>
 
         _verticalVelocity = -9.8f;
         _movement = Vector3.zero;
+
+        _controlEnabled = true;
+
+        IsHiding = false;
     }
 
     void Update()
     {
+        if (!_controlEnabled) return;
+
         HandleInput();
         CalculateMovement();
         _cc.Move(_movement * Time.deltaTime);
@@ -70,4 +81,12 @@ public class FPSController : Singleton<FPSController>
             _horizontalInput.z*(isSprinting?_sprintSpeed:_walkSpeed));
 
     }
+
+    public void EnableInput() { _controlEnabled = true; }
+
+    public void DisableInput() 
+    { 
+        //_movement = Vector3.zero;
+        _controlEnabled = false; 
+    } 
 }
