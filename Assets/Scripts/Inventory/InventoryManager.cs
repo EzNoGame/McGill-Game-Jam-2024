@@ -26,7 +26,6 @@ public class InventoryManager : Singleton<InventoryManager>
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0) //backwards scroll
         {
-            Debug.Log("scroll");
             if (selectedSlot <= 0)
             {
                 ChangeSelectedSlot(toolbarSlots-1);
@@ -87,7 +86,6 @@ public class InventoryManager : Singleton<InventoryManager>
 
     public void ChangeSelectedSlot(int newValue)
     {
-        Debug.Log("changing");
         if (selectedSlot >= 0) 
         { 
             slots[selectedSlot].Deselect(); 
@@ -118,7 +116,6 @@ public class InventoryManager : Singleton<InventoryManager>
             if (itemInSlot == null)
             {
                 SpawnItem(item, slot);
-                Debug.Log("Yay!");
                 return true;
             }
         }

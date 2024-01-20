@@ -120,3 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Gear
   _item: {fileID: 11400000, guid: 2f9ffa5cef0a6fa40bfa3c35ca17e2cf, type: 2}
+  _interactable: 1

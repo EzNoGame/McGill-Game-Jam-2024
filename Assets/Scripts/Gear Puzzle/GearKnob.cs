@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum GearSize
@@ -15,20 +16,40 @@ public class GearKnob : MonoBehaviour, IInteractable
     [SerializeField]
     private GearSize _gearSize;
 
-    private GearSize _inputGearSize;
+    private GearSize _inputGearSize = GearSize.NotAGear;
 
     [SerializeField]
     private GameObject smallGear, mediumGear, largeGear;
 
     private int _bruteForceCounter = 0;
 
+    public void OnEnable()
+    {
+        BroadcastSystem.PickupGear += RemoveGear;
+    }
+
+    public void OnDisable()
+    {
+        BroadcastSystem.PickupGear -= RemoveGear;
+    }
+
     public string GetDisplayText()
     {
+        if(_inputGearSize != GearSize.NotAGear)
+        {
+            return "";
+        }
+
         return "Press E to insert gear";
     }
 
     public void Interact()
     {
+        if(_inputGearSize != GearSize.NotAGear)
+        {
+            return;
+        }
+
         Item item = InventoryManager.Instance.GetSelectedItem();
 
         if(item == null)
@@ -71,4 +92,18 @@ public class GearKnob : MonoBehaviour, IInteractable
     {
         return _inputGearSize == _gearSize;
     }
+
+    public void RemoveGear(GameObject g)
+    {
+        if(!object.ReferenceEquals(g, gameObject))
+        {
+            return;
+        }
+
+        Debug.Log("remove gear");
+
+        _inputGearSize = GearSize.NotAGear;
+    }
+
+    public GearSize GetInputSize() => _inputGearSize;
 }
