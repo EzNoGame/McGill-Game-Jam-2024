@@ -11,6 +11,9 @@ public class CameraSystem : Singleton<CameraSystem>
 
     public GameObject _objLookingAt;
 
+    public Transform _orientation;
+    public Transform Hand;
+
     private Camera thisCam;
     private Camera otherCam;
 
@@ -51,6 +54,7 @@ public class CameraSystem : Singleton<CameraSystem>
         _yRotation += mouseX;
 
         transform.localRotation = Quaternion.Euler(_xRotation, _yRotation, 0);
+        _orientation.rotation = Quaternion.Euler(0, _yRotation, 0);
 
         float distance = 3f;
         RaycastHit hit;
@@ -59,6 +63,8 @@ public class CameraSystem : Singleton<CameraSystem>
         {
             distance = hit.distance;
         }
+
+        //Hand.position = transform.position + transform.TransformDirection(Vector3.forward) * distance;
     }
 
     public GameObject GetObjLookedAt()

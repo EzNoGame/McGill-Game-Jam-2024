@@ -12,7 +12,8 @@ public class PickUp : MonoBehaviour, IInteractable
         Debug.Log("You interacted");
         if (InventoryManager.Instance.AddItem(_item))
         {
-            
+            transform.SetParent(CameraSystem.Instance.Hand);
+            transform.localPosition = Vector3.zero;
         }
     }
 

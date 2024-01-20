@@ -108,6 +108,7 @@ public class InventoryManager : Singleton<InventoryManager>
             if (itemInSlot == null)
             {
                 SpawnItem(item, slot);
+                Debug.Log("Yay!");
                 return true;
             }
         }
