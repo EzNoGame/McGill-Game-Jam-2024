@@ -16,6 +16,11 @@ public class PickUp : MonoBehaviour, IInteractable
 
         if (InventoryManager.Instance.AddItem(_item))
         {
+            if(transform.parent != null)
+            {
+                Debug.Log("remove a gear from a knob");
+                BroadcastSystem.PickupGear?.Invoke(transform.parent.gameObject);
+            }
             // TODO SHOW ITEM IN HAND
             transform.SetParent(CameraSystem.Instance.Hand);
             transform.localPosition = Vector3.zero;
