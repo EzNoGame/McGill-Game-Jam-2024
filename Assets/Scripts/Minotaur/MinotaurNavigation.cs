@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class MinotaurNavigation : MonoBehaviour
 {
     public GameObject player;
+    public Logic logic;
     public float chasingSpeed;
     public float patrollingSpeed;
     public bool isPatroling;
@@ -27,7 +28,9 @@ public class MinotaurNavigation : MonoBehaviour
         //Check if has caught player (less than 1 meter away and not hiding)
         if(Vector3.Distance(transform.position,player.transform.position) < 3 && !isHiding){
             Debug.Log("Dead");
+            logic.lose();
         }
+    
         //Update destination
         if(isPatroling){
             agent.speed = patrollingSpeed;
@@ -61,4 +64,5 @@ public class MinotaurNavigation : MonoBehaviour
         isPatroling = true;
         agent.destination = patrolCheckPoints[patrolInteger].transform.position;
     }
+    
 }
