@@ -83,4 +83,14 @@ public class CameraSystem : Singleton<CameraSystem>
     public void EnableInput() { _controlEnabled = true; }
 
     public void DisableInput() { _controlEnabled = false; } 
+
+    // public void CameraShake(float duration, float magnitude)
+    // {
+    //     StartCoroutine("Shake", duration, magnitude)
+    // }
+
+    // public Coroutine Shake(float duration, float magnitude)
+    // {
+
+    // }
 }
