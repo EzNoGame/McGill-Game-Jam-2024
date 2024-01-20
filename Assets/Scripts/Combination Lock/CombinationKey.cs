@@ -8,6 +8,9 @@ public class CombinationKey : MonoBehaviour, IInteractable
     [SerializeField, Range(0,9)]
     private int _keyValue;
 
+    [SerializeField]
+    private AudioClip _keyPressedSound;
+
     public string GetDisplayText()
     {
         return "Press E to Input";
@@ -16,5 +19,6 @@ public class CombinationKey : MonoBehaviour, IInteractable
     public void Interact()
     {
         BroadcastSystem.KeyPressed(_keyValue);
+        AudioSystem.Instance.PlaySFX(_keyPressedSound);
     }
 }
