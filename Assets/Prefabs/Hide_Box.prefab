@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7621350773594716828}
   - component: {fileID: 947054424246264716}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HideCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 361723755577121345}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.17, y: 1.42, z: -0}
+  m_LocalPosition: {x: 0.27, y: 1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65,7 +65,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 62
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3725945911144459836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LidHinge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 858695547374963962}
   - component: {fileID: 5383544534685725379}
   - component: {fileID: 8672973912542207359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 7479741997353491869}
   - component: {fileID: 2400547556350185631}
   - component: {fileID: 2766156458387948096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hide_Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75251, y: 0.75251, z: 0.75251}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7621350773594716828}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 5225691696086512837}
   - component: {fileID: 3854760325715444053}
   - component: {fileID: 2880158646711545569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 4144579805166113807}
   - component: {fileID: 6772590847946187370}
   - component: {fileID: 5293734867479491997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -18,15 +18,12 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
     public void Select()
     {
-        Debug.Log("selecting");
         img.color = selected;
     }
     public void Deselect()
     {
         img.color = notSelected;
     }
-
-
 
     public void OnDrop(PointerEventData eventData)
     {

@@ -6,13 +6,11 @@ using UnityEngine;
 
 public class OpenWallTrigger : MonoBehaviour
 {
-    public WallController targetWall;
-    // Start is called before the first frame update
+    public Puzzle puzzle;
+
+ 
     
 
-    // Update is called once per frame
-    void Update()
-    {
-        targetWall.OpenWall();
-    }
+
+
 }
