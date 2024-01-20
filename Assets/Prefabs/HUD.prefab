@@ -894,7 +894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4833818224445408299}
   - component: {fileID: 7855584872166190753}
-  - component: {fileID: 8861453566028380153}
+  - component: {fileID: 1488140609499270425}
   m_Layer: 5
   m_Name: SprintBar
   m_TagString: Untagged
@@ -936,7 +936,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &8861453566028380153
+--- !u!114 &1488140609499270425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -945,7 +945,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7296140483087305496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5030677d2df8e6649a9d768ebc194fd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cb3180747b5b5047aae6027b49edbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _fill: {fileID: 4815097691247304211}
