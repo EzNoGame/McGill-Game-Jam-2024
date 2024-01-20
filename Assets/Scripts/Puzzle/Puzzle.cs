@@ -15,7 +15,7 @@ public abstract class Puzzle : MonoBehaviour
     {
         SaveSystem.Instance.AddPuzzle(ID);
         Debug.Log("solved");
-        onPuzzleSolved.Invoke();
+        onPuzzleSolved?.Invoke();
         _solved = true;
         BroadcastSystem.PuzzleSolved?.Invoke(this);
     }
