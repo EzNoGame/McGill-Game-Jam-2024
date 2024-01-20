@@ -12,14 +12,12 @@ public class FPSController : Singleton<FPSController>
     private Transform _orientation;
 
     private Vector3 _horizontalInput;
-    private bool _jumpInput;
     private CharacterController _cc;
-    private float _verticalVelocity;
+    private float _verticalVelocity = -9.8f;
     private Vector3 _movement;
-    private float _kyoteTimer, _preJumpTimer, _jumpWindowTimer;
+
 
     private bool _controlEnabled;
-
 
     public float HorizontalMaxSpeed => _walkSpeed;
 
@@ -28,9 +26,8 @@ public class FPSController : Singleton<FPSController>
     {
         _cc = GetComponent<CharacterController>();
         _horizontalInput = new Vector3(0f, 0f, 0f);
-        _jumpInput = false;
 
-        _verticalVelocity = 0f;
+        _verticalVelocity = -9.8f;
         _movement = Vector3.zero;
 
         _controlEnabled = true;
@@ -62,8 +59,6 @@ public class FPSController : Singleton<FPSController>
     {
         Vector2 input = VerticalInputThreashHold();
         _horizontalInput = input.x * _orientation.right +  input.y * _orientation.forward;
-
-        _jumpInput = Input.GetButtonDown("Jump");
     }
 
     bool SprintCheck()
