@@ -17,6 +17,7 @@ public class SaveTest : MonoBehaviour
     public void Reset()
     {
         SaveSystem.Instance.NewRun();
+        counter = 0;
     }
 
     public void Display()
