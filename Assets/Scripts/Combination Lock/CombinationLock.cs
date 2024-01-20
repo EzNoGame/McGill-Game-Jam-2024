@@ -6,13 +6,16 @@ public class CombinationLock : Puzzle
 {
     [SerializeField]
     private List<int> _combination;
-
+    
     private List<int> _userInput;
 
     [SerializeField]
     private List<CombinationLockLight> _lights;
     [SerializeField]
     private Material _passMaterial, _failMaterial;
+
+
+  
 
     void OnEnable()
     {
@@ -58,5 +61,9 @@ public class CombinationLock : Puzzle
             }
             _userInput.Clear();
         }
+    }
+
+    public bool isSolved() {
+        return this._solved;
     }
 }
