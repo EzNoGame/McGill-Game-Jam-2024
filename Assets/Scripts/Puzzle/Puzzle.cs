@@ -9,4 +9,8 @@ public abstract class Puzzle : MonoBehaviour
 
     public int GetID() => ID;
 
+    protected virtual void Solved()
+    {
+        SaveSystem.Instance.AddPuzzle(ID);
+    }
 }
