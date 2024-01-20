@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7726649169703315562}
   - component: {fileID: 4360892715719375493}
   - component: {fileID: 1960468064633720471}
+  - component: {fileID: 9179098340289783291}
   m_Layer: 0
   m_Name: Slot
   m_TagString: Untagged
@@ -91,3 +92,27 @@ MonoBehaviour:
   img: {fileID: 4360892715719375493}
   selected: {r: 0.99371064, g: 0.6343498, b: 0.6343498, a: 1}
   notSelected: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &9179098340289783291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124200219967794627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 50, y: 50}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
