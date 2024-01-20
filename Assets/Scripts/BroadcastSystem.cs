@@ -14,4 +14,6 @@ public static class BroadcastSystem
     public static Action<GearSize, GameObject> GearInstalled;
 
     public static Action<Puzzle> PuzzleSolved;
+
+    public static Action<GameObject> PickupGear;
 }
