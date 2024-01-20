@@ -12,5 +12,6 @@ public abstract class Puzzle : MonoBehaviour
     protected virtual void Solved()
     {
         SaveSystem.Instance.AddPuzzle(ID);
+        _solved = true;
     }
 }
