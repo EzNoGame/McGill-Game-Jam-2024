@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b015ec99d8779bb094db6310118af76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sensitivity: 100
+  _sensitivity: 10
   _orientation: {fileID: 0}
   _cameraHolder: {fileID: 0}
   _hand: {fileID: 0}
