@@ -11,6 +11,9 @@ public class FPSController : Singleton<FPSController>
     [SerializeField]
     private Transform _orientation;
 
+    public GameObject Model;
+    private MeshRenderer _mesh;
+
     private Vector3 _horizontalInput;
     private CharacterController _cc;
     private float _verticalVelocity = -9.8f;
@@ -18,8 +21,8 @@ public class FPSController : Singleton<FPSController>
 
 
     private bool _controlEnabled;
-
     public bool IsHiding;
+
 
     public float HorizontalMaxSpeed => _walkSpeed;
 
@@ -35,6 +38,8 @@ public class FPSController : Singleton<FPSController>
         _controlEnabled = true;
 
         IsHiding = false;
+
+        _mesh = Model.GetComponent<MeshRenderer>();
     }
 
     void Update()
@@ -84,9 +89,8 @@ public class FPSController : Singleton<FPSController>
 
     public void EnableInput() { _controlEnabled = true; }
 
-    public void DisableInput() 
-    { 
-        //_movement = Vector3.zero;
-        _controlEnabled = false; 
-    } 
+    public void DisableInput() { _controlEnabled = false; } 
+
+    public void ShowMesh() { _mesh.enabled = true; }
+    public void HideMesh() { _mesh.enabled = false; }
 }

@@ -34,9 +34,8 @@ public class HidingPlace : MonoBehaviour, IInteractable
         InteractScript.Instance.Override();
         StartCoroutine(KeyDelay());
         CameraSystem.Instance.SwitchToAlternativeCam(_hideCam);
-        CameraSystem.Instance.DisableInput();
-        FPSController.Instance.DisableInput();
         FPSController.Instance.IsHiding = true;
+        FPSController.Instance.HideMesh();
         InteractUI.Instance.Show("Exit hiding");
     }
 
@@ -45,9 +44,8 @@ public class HidingPlace : MonoBehaviour, IInteractable
         _hiding = false;
         InteractScript.Instance.UnOverride();
         CameraSystem.Instance.SwitchToFPSCam();
-        CameraSystem.Instance.EnableInput();
-        FPSController.Instance.EnableInput();
         FPSController.Instance.IsHiding = false;
+        FPSController.Instance.ShowMesh();
     }
 
     public string GetDisplayText()
