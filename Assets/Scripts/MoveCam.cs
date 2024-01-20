@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class MoveCam : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform CameraPos;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.position = CameraPos.position;
+        Debug.Log(transform.position);
     }
 }
