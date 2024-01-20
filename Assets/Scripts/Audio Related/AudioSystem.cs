@@ -16,6 +16,24 @@ public class AudioSystem  : Singleton<AudioSystem>
 
     public float fadeDuration = 2.0f; // Duration of the crossfade in seconds
 
+    public void SetMainVolume(float volume)
+    {
+        _mainVolume = volume;
+        UpdateVolume();
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        _sfxVolume = volume;
+        UpdateVolume();
+    }
+
+    public void SetBGMVolume(float volume)
+    {
+        _bgmVolume = volume;
+        UpdateVolume();
+    }
+
     private void Start()
     {
         UpdateVolume();
