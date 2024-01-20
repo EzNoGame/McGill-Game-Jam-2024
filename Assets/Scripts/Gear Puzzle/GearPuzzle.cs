@@ -7,7 +7,6 @@ public class GearPuzzle : Puzzle
 {
     [SerializeField]
     private List<GearKnob> _gearKnobs;
-    private List<GearSize> _gearSizes;
     [SerializeField]
     private Material _passMaterial, _failMaterial;
     [SerializeField]
@@ -23,11 +22,6 @@ public class GearPuzzle : Puzzle
         BroadcastSystem.GearInstalled -= AddGear;
     }
 
-    public void Start()
-    {
-        _gearSizes = new List<GearSize>();
-    }
-
     void AddGear(GearSize gearSize, GameObject g)
     {
         if(_solved || !object.ReferenceEquals(g,gameObject))
@@ -35,26 +29,26 @@ public class GearPuzzle : Puzzle
 
         Debug.Log("A " + gearSize.ToString() + " Gear is installed");
 
-        _gearSizes.Add(gearSize);
-
-        if(_gearSizes.Count == _gearKnobs.Count)
+        for(int i = 0; i < _gearKnobs.Count; i++)
         {
-            for(int i = 0; i < _gearSizes.Count; i++)
-            {
-                if(!_gearKnobs[i].Match())
-                {
-                    _gearSizes.Clear();
-                    _light.GetComponent<Renderer>().material = _failMaterial;
-                    foreach(GearKnob knob in _gearKnobs)
-                    {
-                        knob.GetComponentInChildren<PickUp>().ToggleInteractability();
-                    }
-                    return;
-                }
-            }
-            _light.GetComponent<Renderer>().material = _passMaterial;
-            Solved();
+            if(_gearKnobs[i].GetInputSize() == GearSize.NotAGear)
+                return;
         }
+
+        for(int i = 0; i < _gearKnobs.Count; i++)
+        {
+            if(!_gearKnobs[i].Match())
+            {
+                _light.GetComponent<Renderer>().material = _failMaterial;
+                foreach(GearKnob knob in _gearKnobs)
+                {
+                    knob.GetComponentInChildren<PickUp>().ToggleInteractability();
+                }
+                return;
+            }
+        }
+        _light.GetComponent<Renderer>().material = _passMaterial;
+        Solved();
     }
 
 }
