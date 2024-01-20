@@ -23,11 +23,6 @@ public class AudioSystem  : Singleton<AudioSystem>
 
     public void UpdateVolume()
     {
-        SaveSystem.Instance.LoadPreferences();
-        _mainVolume = SaveSystem.Instance.Preference.MainVolume;
-        _sfxVolume = SaveSystem.Instance.Preference.SFXVolume;
-        _bgmVolume = SaveSystem.Instance.Preference.MusicVolume;
-
         audioSources[_crossFadeCounter].volume = _mainVolume*_bgmVolume;
     }
 
