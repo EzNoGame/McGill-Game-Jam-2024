@@ -11,6 +11,8 @@ public class CombinationKey : MonoBehaviour, IInteractable
     [SerializeField]
     private AudioClip _keyPressedSound;
 
+    private int _bruteForceCounter = 0;
+
     public string GetDisplayText()
     {
         return "Press E to Input";
@@ -22,5 +24,21 @@ public class CombinationKey : MonoBehaviour, IInteractable
         AudioSystem.Instance.PlaySFX(_keyPressedSound);
         if(GetComponent<Animation>() != null && !GetComponent<Animation>().isPlaying)
             GetComponent<Animation>().Play();
+        
+        Item item = InventoryManager.Instance.GetSelectedItem();
+
+        if(item == null)
+        {
+            return;
+        }
+
+        if(item.type == ItemType.Brick)
+        {
+            _bruteForceCounter++;
+            if(_bruteForceCounter >= 10)
+            {
+                transform.parent.GetComponent<Puzzle>().Solved();
+            }
+        }
     }
 }
