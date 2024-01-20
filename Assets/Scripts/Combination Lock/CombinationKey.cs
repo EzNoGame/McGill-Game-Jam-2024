@@ -5,7 +5,7 @@ using UnityEngine;
 public class CombinationKey : MonoBehaviour, IInteractable
 {
 
-    [SerializeField, Range(1,9)]
+    [SerializeField, Range(0,9)]
     private int _keyValue;
 
     public string GetDisplayText()

@@ -26,7 +26,7 @@ public class InteractScript : Singleton<InteractScript>
 
         InteractUI.Instance.Show(interactComponent.GetDisplayText());
 
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             interactComponent.Interact();
         }
