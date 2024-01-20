@@ -18,6 +18,7 @@ public class InventoryItem : MonoBehaviour
     {
         item = newItem;
         image.sprite = newItem.img;
+        transform.localScale = new Vector2(0.6f, 0.6f);
         //refreshCount();
     }
 
