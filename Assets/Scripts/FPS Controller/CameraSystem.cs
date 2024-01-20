@@ -1,18 +1,11 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(Camera))]
-public class FPSCamera : Singleton<FPSCamera> {
-    [SerializeField]
-    private float _sensitivity = 100f;
 
-    // [SerializeField, Header("transform in player to sync the rotation with camera")]
-    // private Transform _orientation;
+public class CameraSystem : Singleton<CameraSystem>
+{
     
-    // [SerializeField, Header("transform in player to keep track the pos of camera")]
-    // private Transform _cameraHolder;
-
-    // [SerializeField, Header("simulate of players hand")]
-    // private Transform _hand;
+    [SerializeField] float _sensitivity = 10f;
 
     private float _xRotation, _yRotation;
 
@@ -35,13 +28,10 @@ public class FPSCamera : Singleton<FPSCamera> {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, 5f))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-            if(_objLookingAt == hit.collider.gameObject)
-                return;
-
+            Debug.DrawRay(transform.position, transform.forward * 10f, Color.red);
+            if (_objLookingAt == hit.collider.gameObject) return;
+            
             _objLookingAt = hit.collider.gameObject;
-            _objLookingAt.GetComponent<Interactable>().BeenSeen();
-
         }
         else
         {
@@ -52,18 +42,15 @@ public class FPSCamera : Singleton<FPSCamera> {
     private void LateUpdate() 
     {
         if (!_controlEnabled) return;
-
-        float mosueX = Input.GetAxisRaw("Mouse X") * _sensitivity;
+        
+        float mouseX = Input.GetAxisRaw("Mouse X") * _sensitivity;
         float mouseY = Input.GetAxisRaw("Mouse Y") * _sensitivity;
 
         _xRotation -= mouseY;
-        _xRotation = Math.Clamp(_xRotation, -90f, 90f);
-        _yRotation += mosueX;
+        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+        _yRotation += mouseX;
 
-        transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
-        //_orientation.rotation = Quaternion.Euler(0, _yRotation, 0);
-
-        //transform.position = _cameraHolder.transform.position;
+        transform.localRotation = Quaternion.Euler(_xRotation, _yRotation, 0);
 
         float distance = 3f;
         RaycastHit hit;
@@ -72,9 +59,6 @@ public class FPSCamera : Singleton<FPSCamera> {
         {
             distance = hit.distance;
         }
-        
-        //_hand.position = transform.position + transform.TransformDirection(Vector3.forward) * distance;
-
     }
 
     public GameObject GetObjLookedAt()
