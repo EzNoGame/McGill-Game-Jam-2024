@@ -27,11 +27,14 @@ public class CombinationLock : MonoBehaviour
 
     private void AcceptKey(int _keyValue)
     {
+        Debug.Log("Key pressed: " + _keyValue);
+
         _userInput.Add(_keyValue);
         
         if(_userInput.SequenceEqual(_combination))
         {
             BroadcastSystem.LockUnlocked?.Invoke(this);
+            Debug.Log("Lock Unlocked");
         }
     }
 }
