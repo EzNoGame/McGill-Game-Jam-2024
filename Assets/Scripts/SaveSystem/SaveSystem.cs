@@ -36,7 +36,7 @@ public class SaveSystem : Singleton<SaveSystem>
     public int GetLastPuzzle()
     {
         LoadRunData();
-        return _runData.PuzzlesSolved[_runData.PuzzlesSolved.Count - 1];
+        return _runData.PuzzlesSolved.Count <= 0 ? -1:_runData.PuzzlesSolved[_runData.PuzzlesSolved.Count - 1];
     }
 
 
