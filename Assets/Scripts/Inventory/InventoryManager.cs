@@ -50,13 +50,13 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
-    public Item GetSelectedItem(bool use)
+    public Item GetSelectedItem()
     {
         InventorySlot slot = slots[selectedSlot];
         InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
         if (itemInSlot != null)
         {
-            Item item =  itemInSlot.item;
+            return itemInSlot.item;
             // if (use)
             // {
             //     itemInSlot.count--;
