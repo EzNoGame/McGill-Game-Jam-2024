@@ -53,7 +53,7 @@ public class SaveSystem : Singleton<SaveSystem>
 
         if(!File.Exists(GetProfilePath() + "rundata.json"))
         {
-             _runData = new URunData();
+            _runData = new URunData();
             SaveRunData();
         }            
     }
