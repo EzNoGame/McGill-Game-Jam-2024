@@ -26,7 +26,7 @@ public class CameraSystem : Singleton<CameraSystem>
     
     private void FixedUpdate() {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 5f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 5f, 1<<3))
         {
             Debug.DrawRay(transform.position, transform.forward * 10f, Color.red);
             if (_objLookingAt == hit.collider.gameObject) return;
