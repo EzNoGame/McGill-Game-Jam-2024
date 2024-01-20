@@ -10,7 +10,10 @@ public class PickUp : MonoBehaviour, IInteractable
     public void Interact()
     {
         Debug.Log("You interacted");
-        InventoryManager.Instance.AddItem(_item);
+        if (InventoryManager.Instance.AddItem(_item))
+        {
+            
+        }
     }
 
     public string GetDisplayText()
