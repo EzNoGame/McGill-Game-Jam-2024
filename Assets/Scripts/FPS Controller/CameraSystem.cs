@@ -55,6 +55,7 @@ public class CameraSystem : Singleton<CameraSystem>
 
         transform.localRotation = Quaternion.Euler(_xRotation, _yRotation, 0);
         _orientation.rotation = Quaternion.Euler(0, _yRotation, 0);
+        //FPSController.Instance._orientation = this._orientation;
 
         float distance = 3f;
         RaycastHit hit;
