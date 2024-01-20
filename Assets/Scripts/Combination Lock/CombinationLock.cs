@@ -48,7 +48,6 @@ public class CombinationLock : Puzzle
             {
                 light.gameObject.GetComponent<Renderer>().material = _passMaterial;
             }
-            _solved = true;
         }
         else if(_userInput.Count == _lights.Count)
         {
