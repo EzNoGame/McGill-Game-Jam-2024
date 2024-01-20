@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,6 +17,11 @@ public class CombinationLock : MonoBehaviour
     void OnDisable()
     {
         BroadcastSystem.KeyPressed -= AcceptKey;
+    }
+
+    void Start()
+    {
+        _userInput = new List<int>();
     }
 
 
