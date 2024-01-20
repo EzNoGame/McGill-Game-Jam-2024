@@ -203,11 +203,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 8278944279392600913, guid: bd539a9fcdf2445f08f7b2b760fc0e6e, type: 3}
   m_PrefabInstance: {fileID: 1384307815}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &1043656873 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 6897481188239486566, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
-  m_PrefabInstance: {fileID: 1829788325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1053241679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1933175984564969194, guid: afced5d636cc92214ab276a57a070603, type: 3}
@@ -233,7 +228,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 1043656873}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
