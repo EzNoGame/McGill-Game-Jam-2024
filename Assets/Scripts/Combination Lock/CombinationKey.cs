@@ -15,7 +15,7 @@ public class CombinationKey : Interactable
 
     public override void BeenSeen()
     {
-        BroadcastSystem.BroadcastMessage("Press E to Input");
+        BroadcastSystem.BroadcastMessage?.Invoke("Press E to Input");
     }
 
     public override void BeenUndone()
@@ -25,6 +25,6 @@ public class CombinationKey : Interactable
 
     public override void BeenUnSeen()
     {
-        BroadcastSystem.BroadcastMessage("");
+        BroadcastSystem.BroadcastMessage?.Invoke("");
     }
 }

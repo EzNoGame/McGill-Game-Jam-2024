@@ -30,10 +30,10 @@ public class FPSCamera : Singleton<FPSCamera> {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5f, 1<<3))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-            if(_objLookingAt == hit.rigidbody.gameObject)
+            if(_objLookingAt == hit.collider.gameObject)
                 return;
-            
-            _objLookingAt = hit.rigidbody.gameObject;
+
+            _objLookingAt = hit.collider.gameObject;
             _objLookingAt.GetComponent<Interactable>().BeenSeen();
 
         }
