@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CombinationLock : MonoBehaviour
+public class CombinationLock : Puzzle
 {
     [SerializeField]
     private List<int> _combination;
@@ -34,6 +34,7 @@ public class CombinationLock : MonoBehaviour
         if(_userInput.SequenceEqual(_combination))
         {
             BroadcastSystem.LockUnlocked?.Invoke(this);
+            Solved();
             Debug.Log("Lock Unlocked");
         }
     }
