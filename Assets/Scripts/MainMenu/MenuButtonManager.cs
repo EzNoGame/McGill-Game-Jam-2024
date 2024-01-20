@@ -22,7 +22,7 @@ public class MenuButtonManager : Singleton<MenuButtonManager>
     // {
     //     SceneTransitionSystem.Instance.LoadSceneTransist("Map");
     // }
-    public void Settings() => SceneManager.LoadScene("Settings", LoadSceneMode.Additive);
+    public void Settings() => SceneManager.LoadScene("Settings");
     public void Menu()
     {
         Destroy(gameObject);
