@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractScript : MonoBehaviour
+public class InteractScript : Singleton<InteractScript>
 {
+    private bool _isOverridden;
+
     void Update()
     {
+        if (_isOverridden) return;
+
         GameObject target = CameraSystem.Instance.GetObjLookedAt();
         if (target == null)
         {
@@ -26,5 +30,15 @@ public class InteractScript : MonoBehaviour
         {
             interactComponent.Interact();
         }
+    }
+
+    public void Override()
+    {
+        _isOverridden = true;
+    }
+
+    public void UnOverride()
+    {
+        _isOverridden = false;
     }
 }

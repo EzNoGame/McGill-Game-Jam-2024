@@ -1,36 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
-public class InteractUI : MonoBehaviour
+public class InteractUI : Singleton<InteractUI>
 {
-    private static InteractUI _instance;
-    public static InteractUI Instance { get { return _instance; } }
-
-    private TextMeshProUGUI _text;
-    //private MeshRenderer _mesh;
+    public TextMeshProUGUI _text;
+    public Image _base;
     // Some keyboard E icon
 
     void Awake()
     {
         _instance = this;
-        _text = GetComponent<TextMeshProUGUI>();
-        //_mesh = GetComponent<MeshRenderer>();
-        //_mesh.enabled = false;
         _text.enabled = false;
+        _base.enabled = false;
     }
 
     public void Show(string pText)
     {
         _text.text = pText;
-        //_mesh.enabled = true;
         _text.enabled = true;
+        _base.enabled = true;
     }
 
     public void Hide()
     {
-        //_mesh.enabled = false;
         _text.enabled = false;
+        _base.enabled = false;
     }
 }
