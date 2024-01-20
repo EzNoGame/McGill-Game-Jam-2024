@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombinationKey : IInteractable
+public class CombinationKey : MonoBehaviour, IInteractable
 {
 
     [SerializeField, Range(1,9)]
