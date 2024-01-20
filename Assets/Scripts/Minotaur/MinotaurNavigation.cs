@@ -25,7 +25,7 @@ public class MinotaurNavigation : MonoBehaviour
     void Update()
     {
         //Check if has caught player (less than 1 meter away and not hiding)
-        if(Vector3.Distance(transform.position,player.transform.position) < 1 && !isHiding){
+        if(Vector3.Distance(transform.position,player.transform.position) < 3 && !isHiding){
             Debug.Log("Dead");
         }
         //Update destination
