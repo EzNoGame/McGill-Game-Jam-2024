@@ -26,8 +26,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         img.color = notSelected;
     }
 
-
-
     public void OnDrop(PointerEventData eventData)
     {
         if (transform.childCount == 0) 

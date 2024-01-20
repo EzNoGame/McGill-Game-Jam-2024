@@ -74,6 +74,16 @@ public class InventoryManager : Singleton<InventoryManager>
         return null;
     }
 
+    public void DeleteSelectedItem()
+    {
+        InventorySlot slot = slots[selectedSlot];
+        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+        if (itemInSlot != null)
+        {
+            Destroy(slot.GetComponentInChildren<InventoryItem>().gameObject);
+        }
+    }
+
 
     public void ChangeSelectedSlot(int newValue)
     {
