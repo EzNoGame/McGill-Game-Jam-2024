@@ -2,29 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombinationKey : Interactable
+public class CombinationKey : IInteractable
 {
 
     [SerializeField, Range(1,9)]
     private int _keyValue;
 
-    public override void BeenIteracted(GameObject obj)
+    public string GetDisplayText()
+    {
+        return "Press E to Input";
+    }
+
+    public void Interact()
     {
         BroadcastSystem.KeyPressed(_keyValue);
-    }
-
-    public override void BeenSeen()
-    {
-        BroadcastSystem.BroadcastMessage?.Invoke("Press E to Input");
-    }
-
-    public override void BeenUndone()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void BeenUnSeen()
-    {
-        BroadcastSystem.BroadcastMessage?.Invoke("");
     }
 }
