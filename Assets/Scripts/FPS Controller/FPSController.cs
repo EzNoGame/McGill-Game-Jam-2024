@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(CharacterController), typeof(Rigidbody))]
 public class FPSController : Singleton<FPSController>
 {
     [SerializeField]
-    private float _walkSpeed = 5f, _sprintSpeed = 10f;
+    private float _walkSpeed = 5f, _sprintSpeed = 9f;
     [SerializeField, Header("in second, how many time can player still jump after leaving a platform")]
     private float _accThreshold = 0.7f;
     [SerializeField]
@@ -22,6 +23,11 @@ public class FPSController : Singleton<FPSController>
 
     private bool _controlEnabled;
     public bool IsHiding;
+    [SerializeField] float _stamina = 100f;
+    [SerializeField] float _rechargeRate = 10f;
+    [SerializeField] float _drainRate = 25f;
+    [SerializeField] bool _isSprinting;
+    [SerializeField] bool _lockSprint;
 
 
     public float HorizontalMaxSpeed => _walkSpeed;
@@ -37,6 +43,9 @@ public class FPSController : Singleton<FPSController>
 
         _controlEnabled = true;
 
+        _isSprinting = false;
+        _lockSprint = false;
+
         IsHiding = false;
 
         _mesh = Model.GetComponent<MeshRenderer>();
@@ -44,9 +53,26 @@ public class FPSController : Singleton<FPSController>
 
     void Update()
     {
+        HandleInput();
+
+        if (Input.GetKey(KeyCode.LeftShift) && _stamina > 0 && !_lockSprint && _horizontalInput.magnitude > 0.1f)
+        {
+            _stamina = Mathf.Clamp(_stamina - (_drainRate * Time.deltaTime), 0, 100);
+            _isSprinting = true;
+        }
+        else
+        {
+            _stamina = Mathf.Clamp(_stamina + (_rechargeRate * Time.deltaTime), 0, 100);
+            _isSprinting = false;
+        }
+
+        if (_stamina <= 0.1f && !_lockSprint) StartCoroutine(LockSprint());
+
+        SprintUI.Instance.Refresh((float) (_stamina / 100f));
+
         if (!_controlEnabled) return;
 
-        HandleInput();
+        
         CalculateMovement();
         _cc.Move(_movement * Time.deltaTime);
     }
@@ -70,21 +96,27 @@ public class FPSController : Singleton<FPSController>
         _horizontalInput = input.x * _orientation.right +  input.y * _orientation.forward;
     }
 
-    bool SprintCheck()
-    {
-        return Input.GetKey(KeyCode.LeftShift);
-    }
+    // bool SprintCheck()
+    // {
+    //     return Input.GetKey(KeyCode.LeftShift);
+    // }
 
     void CalculateMovement()
     {
-
-        bool isSprinting = SprintCheck();
+        //bool isSprinting = SprintCheck();
 
         _movement = new Vector3(
-            _horizontalInput.x*(isSprinting?_sprintSpeed:_walkSpeed), 
+            _horizontalInput.x*(_isSprinting?_sprintSpeed:_walkSpeed), 
             _verticalVelocity, 
-            _horizontalInput.z*(isSprinting?_sprintSpeed:_walkSpeed));
+            _horizontalInput.z*(_isSprinting?_sprintSpeed:_walkSpeed));
 
+    }
+
+    IEnumerator LockSprint()
+    {
+        _lockSprint = true;
+        yield return new WaitForSeconds(3f);
+        _lockSprint = false;
     }
 
     public void EnableInput() { _controlEnabled = true; }
