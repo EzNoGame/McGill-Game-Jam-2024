@@ -29,7 +29,7 @@ public class CameraSystem : Singleton<CameraSystem>
     
     private void FixedUpdate() {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 5f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 5f, 1<<6))
         {
             Debug.DrawRay(transform.position, transform.forward * 10f, Color.red);
             if (_objLookingAt == hit.collider.gameObject) return;
@@ -75,6 +75,9 @@ public class CameraSystem : Singleton<CameraSystem>
 
     public void SwitchToAlternativeCam(Camera alt)
     {
+        FPSController.Instance.DisableInput();
+        this.DisableInput();
+
         otherCam = alt;
         thisCam.enabled = false;
         otherCam.enabled = true;
@@ -85,6 +88,9 @@ public class CameraSystem : Singleton<CameraSystem>
         otherCam.enabled = false;
         thisCam.enabled = true;
         otherCam = null;
+
+        FPSController.Instance.EnableInput();
+        this.EnableInput();
     }
 
     public void EnableInput() { _controlEnabled = true; }

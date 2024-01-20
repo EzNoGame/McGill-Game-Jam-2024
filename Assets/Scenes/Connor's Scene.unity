@@ -431,8 +431,8 @@ GameObject:
   - component: {fileID: 866076856}
   - component: {fileID: 866076855}
   - component: {fileID: 866076859}
-  m_Layer: 0
-  m_Name: Cylinder
+  m_Layer: 6
+  m_Name: Gear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -540,6 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Gear
   _item: {fileID: 11400000, guid: 2f9ffa5cef0a6fa40bfa3c35ca17e2cf, type: 2}
+  _interactable: 1
 --- !u!1 &896156385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,25 +1568,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 947054424246264716, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
-      propertyPath: field of view
-      value: 62
-      objectReference: {fileID: 0}
     - target: {fileID: 6443642459260523944, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
       propertyPath: m_Name
       value: Hide_Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 7479741997353491869, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.75251
-      objectReference: {fileID: 0}
-    - target: {fileID: 7479741997353491869, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.75251
-      objectReference: {fileID: 0}
-    - target: {fileID: 7479741997353491869, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.75251
       objectReference: {fileID: 0}
     - target: {fileID: 7479741997353491869, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1625,18 +1610,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7479741997353491869, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7621350773594716828, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 7621350773594716828, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 7621350773594716828, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

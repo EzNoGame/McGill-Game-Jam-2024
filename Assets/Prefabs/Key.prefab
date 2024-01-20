@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7754874081746396213}
   - component: {fileID: 3205782328429257915}
   - component: {fileID: 7819554831498535705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Key
   _item: {fileID: 11400000, guid: 9ddb7b1ccfd4a264abfc3aba79e144e3, type: 2}
+  _interactable: 1
 --- !u!33 &7754874081746396213
 MeshFilter:
   m_ObjectHideFlags: 0
