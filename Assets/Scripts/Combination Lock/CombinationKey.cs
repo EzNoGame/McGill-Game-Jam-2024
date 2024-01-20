@@ -18,7 +18,7 @@ public class CombinationKey : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        BroadcastSystem.KeyPressed(_keyValue);
+        BroadcastSystem.KeyPressed(_keyValue, transform.parent.gameObject);
         AudioSystem.Instance.PlaySFX(_keyPressedSound);
         if(GetComponent<Animation>() != null && !GetComponent<Animation>().isPlaying)
             GetComponent<Animation>().Play();

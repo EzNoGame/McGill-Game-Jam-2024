@@ -8,6 +8,10 @@ public static class BroadcastSystem
     public static Action<GameObject> ObjectDropped;
 
     //combination lock
-    public static Action<int> KeyPressed;
+    public static Action<int, GameObject> KeyPressed;
     public static Action<CombinationLock> LockUnlocked;
+
+    public static Action<GearSize, GameObject> GearInstalled;
+
+    public static Action<Puzzle> PuzzleSolved;
 }
