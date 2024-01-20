@@ -29,9 +29,9 @@ public class CombinationLock : Puzzle
         _userInput = new List<int>();
     }
 
-    private void AcceptKey(int _keyValue)
+    private void AcceptKey(int _keyValue, GameObject g)
     {
-        if(_solved)
+        if(_solved || !object.ReferenceEquals(g,gameObject))
             return;
 
         Debug.Log("Key pressed: " + _keyValue);

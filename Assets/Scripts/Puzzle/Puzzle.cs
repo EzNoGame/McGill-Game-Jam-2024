@@ -13,5 +13,6 @@ public abstract class Puzzle : MonoBehaviour
     {
         SaveSystem.Instance.AddPuzzle(ID);
         _solved = true;
+        BroadcastSystem.PuzzleSolved?.Invoke(this);
     }
 }
