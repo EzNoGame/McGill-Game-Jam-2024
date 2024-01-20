@@ -18,15 +18,15 @@ public class InventoryItem : MonoBehaviour
     {
         item = newItem;
         image.sprite = newItem.img;
-        refreshCount();
+        //refreshCount();
     }
 
-    public void refreshCount()
-    {
-        countText.text = count.ToString();
-        bool textActive = count > 1;
-        countText.gameObject.SetActive(textActive);
-    }
+    // public void refreshCount()
+    // {
+    //     countText.text = count.ToString();
+    //     bool textActive = count > 1;
+    //     countText.gameObject.SetActive(textActive);
+    // }
 
    
 }
