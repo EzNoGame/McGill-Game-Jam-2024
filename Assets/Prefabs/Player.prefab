@@ -103,13 +103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d3e23db86cf73d0a14bfe9e21aabd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpAcceleration: 25
   _walkSpeed: 5
   _sprintSpeed: 10
-  _kyoteTime: 0.5
-  _preJumpMaxTime: 0.5
-  _jumpWindow: 0.3
-  _accThreshold: 0.7
+  _accThreshold: 0.1
   _orientation: {fileID: 2774758246144694409}
 --- !u!1 &4237998470127689894
 GameObject:
