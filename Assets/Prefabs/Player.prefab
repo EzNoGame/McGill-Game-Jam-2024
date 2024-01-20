@@ -109,6 +109,7 @@ MonoBehaviour:
   _sprintSpeed: 10
   _accThreshold: 0.05
   _orientation: {fileID: 8157883404807135354}
+  Model: {fileID: 7876915794230917704}
   IsHiding: 0
 --- !u!114 &8022692304438151097
 MonoBehaviour:
