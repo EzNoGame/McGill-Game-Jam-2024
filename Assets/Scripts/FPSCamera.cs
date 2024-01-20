@@ -16,44 +16,40 @@ public class FPSCamera : Singleton<FPSCamera> {
 
     private float _xRotation, _yRotation;
 
-    private GameObject _objLookingAt;
+    public GameObject _objLookingAt;
 
     private Camera thisCam;
     private Camera otherCam;
+
+    private bool _controlEnabled;
 
     private void Start() 
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         thisCam = GetComponent<Camera>();
+        _controlEnabled = true;
     }
     
     private void FixedUpdate() {
         RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5f, 1<<3))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 5f))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-            if(_objLookingAt == hit.rigidbody.gameObject)
-                return;
+            Debug.DrawRay(transform.position, transform.forward * 10f, Color.red);
+            if (_objLookingAt == hit.collider.gameObject) return;
             
-            _objLookingAt = hit.rigidbody.gameObject;
-            _objLookingAt.GetComponent<Interactable>().BeenSeen();
-
+            _objLookingAt = hit.collider.gameObject;
         }
         else
         {
-            if(_objLookingAt != null)
-            {
-                _objLookingAt.GetComponent<Interactable>().BeenUnSeen();
-                _objLookingAt = null;
-            }
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 5, Color.white);
+            _objLookingAt = null;
         }
     }
 
-    private void LateUpdate() {
-
+    private void LateUpdate() 
+    {
+        if (!_controlEnabled) return;
+        
         float mosueX = Input.GetAxisRaw("Mouse X") * _sensitivity;
         float mouseY = Input.GetAxisRaw("Mouse Y") * _sensitivity;
 
@@ -78,7 +74,10 @@ public class FPSCamera : Singleton<FPSCamera> {
 
     }
 
-    public GameObject GetObjLookedAt() => _objLookingAt;
+    public GameObject GetObjLookedAt()
+    {
+        return _objLookingAt;
+    }
 
     public void SwitchToAlternativeCam(Camera alt)
     {
@@ -93,4 +92,8 @@ public class FPSCamera : Singleton<FPSCamera> {
         thisCam.enabled = true;
         otherCam = null;
     }
+
+    public void EnableInput() { _controlEnabled = true; }
+
+    public void DisableInput() { _controlEnabled = false; } 
 }

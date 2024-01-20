@@ -3,41 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class InteractUI : MonoBehaviour
+public class InteractUI : Singleton<InteractUI>
 {
-    private TextMeshProUGUI _text;
+    private TextMeshPro _text;
+    private MeshRenderer _mesh;
     // Some keyboard E icon
-
-    private bool visible; // Prevents every frame calling Show() and Hide()
 
     void Awake()
     {
-        _text = GetComponent<TextMeshProUGUI>();
+        _text = GetComponent<TextMeshPro>();
+        _mesh = GetComponent<MeshRenderer>();
+        _mesh.enabled = false;
     }
 
-    void Update()
+    public void Show(string pText)
     {
-        GameObject target = FPSCamera.Instance.GetObjLookedAt();
-        IInteractable component = target.GetComponent<IInteractable>();
-        if (component == null && visible)
-        {
-            Hide();
-            return;
-        }
-
-        _text.text = component.GetDisplayText();
-        if (!visible) Show();
+        _text.text = pText;
+        _mesh.enabled = true;
     }
 
-    void Show()
+    public void Hide()
     {
-        visible = true;
-        _text.enabled = true;
-    }
-
-    void Hide()
-    {
-        visible = false;
-        _text.enabled = false;
+        _mesh.enabled = false;
     }
 }
