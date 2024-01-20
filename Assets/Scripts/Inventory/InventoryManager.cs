@@ -50,26 +50,26 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
-    public Item GetSelectedItem(bool use)
+    public Item GetSelectedItem()
     {
         InventorySlot slot = slots[selectedSlot];
         InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
         if (itemInSlot != null)
         {
-            Item item =  itemInSlot.item;
-            if (use)
-            {
-                itemInSlot.count--;
-                if (itemInSlot.count <= 0)
-                {
-                    Destroy(itemInSlot.gameObject);
-                }
-                else
-                {
-                    itemInSlot.refreshCount();
-                }
-                return item;
-            }
+            return itemInSlot.item;
+            // if (use)
+            // {
+            //     itemInSlot.count--;
+            //     if (itemInSlot.count <= 0)
+            //     {
+            //         Destroy(itemInSlot.gameObject);
+            //     }
+            //     else
+            //     {
+            //         itemInSlot.refreshCount();
+            //     }
+            //     return item;
+            // }
         }
         return null;
     }
@@ -89,17 +89,17 @@ public class InventoryManager : Singleton<InventoryManager>
 
     public bool AddItem(Item item)
     {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            InventorySlot slot = slots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot != null && itemInSlot.item == item && itemInSlot.count < item.maxStack && item.stackable)
-            {
-                itemInSlot.count++;
-                itemInSlot.refreshCount();
-                return true;
-            }
-        }
+        // for (int i = 0; i < slots.Length; i++)
+        // {
+        //     InventorySlot slot = slots[i];
+        //     InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+        //     if (itemInSlot != null && itemInSlot.item == item && itemInSlot.count < item.maxStack && item.stackable)
+        //     {
+        //         itemInSlot.count++;
+        //         itemInSlot.refreshCount();
+        //         return true;
+        //     }
+        // }
         
         for (int i = 0; i < slots.Length; i++)
         {
@@ -108,6 +108,7 @@ public class InventoryManager : Singleton<InventoryManager>
             if (itemInSlot == null)
             {
                 SpawnItem(item, slot);
+                Debug.Log("Yay!");
                 return true;
             }
         }

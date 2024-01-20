@@ -5,6 +5,8 @@ using UnityEngine;
 public class InteractScript : Singleton<InteractScript>
 {
     private bool _isOverridden;
+    private IInteractable _currentInteractable;
+    public IInteractable Current { get { return _currentInteractable; } }
 
     void Update()
     {
@@ -24,11 +26,12 @@ public class InteractScript : Singleton<InteractScript>
             return;
         }
 
-        InteractUI.Instance.Show(interactComponent.GetDisplayText());
+        _currentInteractable = interactComponent;
+        InteractUI.Instance.Show(_currentInteractable.GetDisplayText());
 
         if (Input.GetKeyDown("e"))
         {
-            interactComponent.Interact();
+            _currentInteractable.Interact();
         }
     }
 
