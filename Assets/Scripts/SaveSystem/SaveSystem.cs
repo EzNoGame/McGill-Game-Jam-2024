@@ -9,19 +9,44 @@ public class SaveSystem : Singleton<SaveSystem>
 
     private const string dataPath = "/Data/";
 
-    private void OnEnable() => LoadAllData();
+    private void OnEnable() => StartUp();
     
-    private void LoadAllData()
+    private void StartUp()
     {
         CreateDataFolder();
         LoadRunData();
     }
 
+
+
+
+    public void NewRun()
+    {
+        _runData = new URunData();
+        SaveRunData();
+    }
+
+    public void AddPuzzle(int puzzleID)
+    {
+        LoadRunData();
+        _runData.PuzzlesSolved.Add(puzzleID);
+        SaveRunData();
+    }
+
+    public int GetLastPuzzle()
+    {
+        LoadRunData();
+        return _runData.PuzzlesSolved[_runData.PuzzlesSolved.Count - 1];
+    }
+
+
+
+
     private string GetProfilePath()
     {
         return Application.persistentDataPath + dataPath;
     }
-    public void CreateDataFolder()
+    private void CreateDataFolder()
     {
         if(!Directory.Exists(GetProfilePath()))
             Directory.CreateDirectory(GetProfilePath());
@@ -33,18 +58,13 @@ public class SaveSystem : Singleton<SaveSystem>
         }            
     }
 
-    public void NewRun()
-    {
-        SaveRunData();
-    }
-
-    public void LoadRunData()
+    private void LoadRunData()
     {
         string path = GetProfilePath() + "rundata.json";
         _runData = JsonUtility.FromJson<URunData>(File.ReadAllText(path));
     }
 
-    public void SaveRunData()
+    private void SaveRunData()
     {
         string path = GetProfilePath() + "rundata.json";
         File.WriteAllText(path, JsonUtility.ToJson(_runData, true));
