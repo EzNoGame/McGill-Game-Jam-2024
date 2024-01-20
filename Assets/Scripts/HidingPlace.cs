@@ -31,6 +31,7 @@ public class HidingPlace : MonoBehaviour, IInteractable
     public void EnterHiding()
     {
         _hiding = true;
+        InteractScript.Instance.Override();
         StartCoroutine(KeyDelay());
         CameraSystem.Instance.SwitchToAlternativeCam(_hideCam);
         CameraSystem.Instance.DisableInput();
@@ -41,6 +42,7 @@ public class HidingPlace : MonoBehaviour, IInteractable
     public void ExitHiding()
     {
         _hiding = false;
+        InteractScript.Instance.UnOverride();
         CameraSystem.Instance.SwitchToFPSCam();
         CameraSystem.Instance.EnableInput();
         FPSController.Instance.EnableInput();
