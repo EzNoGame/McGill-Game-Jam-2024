@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7845774873844861800}
   - component: {fileID: 2581130712808171250}
   m_Layer: 0
-  m_Name: LIght_1
+  m_Name: Puzzle_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
