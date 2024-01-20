@@ -19,6 +19,8 @@ public class FPSController : Singleton<FPSController>
 
     private bool _controlEnabled;
 
+    public bool IsHiding;
+
     public float HorizontalMaxSpeed => _walkSpeed;
 
 
@@ -31,6 +33,8 @@ public class FPSController : Singleton<FPSController>
         _movement = Vector3.zero;
 
         _controlEnabled = true;
+
+        IsHiding = false;
     }
 
     void Update()
