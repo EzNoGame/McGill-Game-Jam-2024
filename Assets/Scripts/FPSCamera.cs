@@ -18,10 +18,14 @@ public class FPSCamera : Singleton<FPSCamera> {
 
     private GameObject _objLookingAt;
 
+    private Camera thisCam;
+    private Camera otherCam;
+
     private void Start() 
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        thisCam = GetComponent<Camera>();
     }
     
     private void FixedUpdate() {
@@ -75,4 +79,18 @@ public class FPSCamera : Singleton<FPSCamera> {
     }
 
     public GameObject GetObjLookedAt() => _objLookingAt;
+
+    public void SwitchToAlternativeCam(Camera alt)
+    {
+        otherCam = alt;
+        thisCam.enabled = false;
+        otherCam.enabled = true;
+    }
+
+    public void SwitchToFPSCam()
+    {
+        otherCam.enabled = false;
+        thisCam.enabled = true;
+        otherCam = null;
+    }
 }
