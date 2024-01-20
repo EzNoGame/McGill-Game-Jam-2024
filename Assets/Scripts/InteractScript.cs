@@ -6,7 +6,7 @@ public class InteractScript : MonoBehaviour
 {
     void Update()
     {
-        GameObject target = FPSCamera.Instance.GetObjLookedAt();
+        GameObject target = CameraSystem.Instance.GetObjLookedAt();
         if (target == null)
         {
             InteractUI.Instance.Hide();
