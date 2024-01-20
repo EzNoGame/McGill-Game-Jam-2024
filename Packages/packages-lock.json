@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.eddy.project-starter-pack": {
+      "version": "https://github.com/EzNoGame/Unity-project-starterpack.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9f89e3bc2ebf3f9e20473a5ea7f05fc4904d1e61"
+    },
     "com.unity.collab-proxy": {
       "version": "2.2.0",
       "depth": 0,
