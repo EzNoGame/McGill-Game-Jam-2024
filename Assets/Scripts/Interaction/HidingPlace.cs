@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HidingPlace : MonoBehaviour, IInteractable
 {
     [SerializeField] Camera _hideCam;
+    private Camera _mainCam;
     private bool _canExit;
     private bool _hiding;
+    public Image Icon;
 
     void Awake()
     {
         _hideCam.enabled = false;
         _hiding = false;
         _canExit = false;
+        _mainCam = Camera.main;
     }
 
     void Update()
@@ -21,6 +25,8 @@ public class HidingPlace : MonoBehaviour, IInteractable
         {
             ExitHiding();
         }
+
+        Icon.transform.rotation = Quaternion.LookRotation(Icon.transform.position - _mainCam.transform.position);
     }
 
     public void Interact()
