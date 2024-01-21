@@ -8,6 +8,10 @@ public class Compass : MonoBehaviour
     Vector3 direction;
 
     // Update is called once per frame
+    void Start() {
+        player = GameObject.FindWithTag("MainCamera").GetComponent<Transform>();
+    }
+
     void Update()
     {
         direction.z = player.eulerAngles.y;
