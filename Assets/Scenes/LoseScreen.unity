@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 12082930}
   - component: {fileID: 12082929}
   - component: {fileID: 12082933}
+  - component: {fileID: 12082934}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -250,6 +251,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &12082934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12082928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ce094d7e7dd1daf8427f247177d522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Aur_Aur_Aur: {fileID: 8300000, guid: a8b8f4d3d3069ba82bdd11c05ddedae8, type: 3}
 --- !u!1001 &152643596
 PrefabInstance:
   m_ObjectHideFlags: 0
