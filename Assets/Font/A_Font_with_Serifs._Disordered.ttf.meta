@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 73326eb2c922fe009a3ec8b7d54a9ba7
+guid: 4c42cd8fa908651909038f69b8598078
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Angeline Vintage
+  - A Font with Serifs. Disordered
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
