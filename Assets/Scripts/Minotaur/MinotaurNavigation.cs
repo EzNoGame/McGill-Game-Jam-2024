@@ -56,6 +56,7 @@ public class MinotaurNavigation : MonoBehaviour
             agent.speed = patrollingSpeed;
             if(agent.remainingDistance<0.2){
                 patrolInteger++;
+                if(patrolInteger == patrolCheckPoints.Count) patrolInteger = 0;
                 agent.destination = patrolCheckPoints[patrolInteger].transform.position;
             }
         }
