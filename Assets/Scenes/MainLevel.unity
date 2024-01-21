@@ -3054,7 +3054,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -13583,18 +13583,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8268356953060255647, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8268356953060255647, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8268356953060255647, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.903
-      objectReference: {fileID: 0}
     - target: {fileID: 7604729182684725217, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -13619,6 +13607,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8268356953060255647, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268356953060255647, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268356953060255647, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.903
+      objectReference: {fileID: 0}
     - target: {fileID: 8809414807305931274, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -13633,7 +13633,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6450838160627595252, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1551839537}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8556985005692886718, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 299886213}
   m_SourcePrefab: {fileID: 100100000, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
 --- !u!1001 &1484258569
 PrefabInstance:
