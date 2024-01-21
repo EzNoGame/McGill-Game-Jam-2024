@@ -3,7 +3,17 @@ guid: 09c7fe40a4d168ee49f57cf197c329bb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mat2
+    second: {fileID: 2800000, guid: fec78c507acc4eeb693f832a3d087092, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: symbolsKeypad
+    second: {fileID: 2800000, guid: 81eae6f66a6d777fd9920b290c224a78, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
