@@ -16,12 +16,16 @@ public class MinotaurNavigation : MonoBehaviour
     private bool gotJucked;
     private int patrolInteger;
     private Vector3 previousDestination;
+
+    public AudioClip roar;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         patrolInteger = 0;
         gotJucked = false;
+        SoundFXManager.instance.PlaySoundFX(roar, transform, 1f); 
+
     }
 
     // Update is called once per frame
