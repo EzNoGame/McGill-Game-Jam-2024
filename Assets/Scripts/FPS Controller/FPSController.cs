@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using System.Linq.Expressions;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(CharacterController), typeof(Rigidbody))]
 public class FPSController : Singleton<FPSController>
@@ -12,8 +14,13 @@ public class FPSController : Singleton<FPSController>
     [SerializeField]
     private Transform _orientation;
 
+    
+
+    
+
     public GameObject Model;
     private MeshRenderer _mesh;
+
 
     private Vector3 _horizontalInput;
     private CharacterController _cc;
@@ -31,6 +38,9 @@ public class FPSController : Singleton<FPSController>
 
 
     public float HorizontalMaxSpeed => _walkSpeed;
+
+    [SerializeField] AudioSource walking;
+    [SerializeField] AudioSource panting;
 
 
     void Start()
@@ -72,9 +82,15 @@ public class FPSController : Singleton<FPSController>
 
         if (!_controlEnabled) return;
 
-        
         CalculateMovement();
         _cc.Move(_movement * Time.deltaTime);
+
+        walking.enabled = _isSprinting;
+        Debug.Log(_isSprinting);
+        panting.enabled =  _lockSprint || _stamina < 50 && !_isSprinting;
+        Debug.Log(_lockSprint);
+        
+       
     }
 
     Vector2 VerticalInputThreashHold()
