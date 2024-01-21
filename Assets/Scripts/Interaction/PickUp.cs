@@ -24,7 +24,8 @@ public class PickUp : MonoBehaviour, IInteractable
             // TODO SHOW ITEM IN HAND
             transform.SetParent(CameraSystem.Instance.Hand);
             transform.localPosition = Vector3.zero;
-            GetComponent<MeshRenderer>().enabled = false;
+            GetComponentInChildren<MeshRenderer>().enabled = false;
+            GetComponentInChildren<Collider>().enabled = false;
         }
     }
 
