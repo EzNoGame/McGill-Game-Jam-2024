@@ -7,7 +7,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public float _timeLeft;
-    private float _maxTime = 305;
+    private float _maxTime = 900;
     private bool _timerOn;
 
     public Image Vignette;
@@ -57,7 +57,7 @@ public class Timer : MonoBehaviour
     private void ChangeAlpha()
     {
         Color color = Vignette.color;
-        color.a = (300f - _timeLeft) / 300f;
+        color.a = (300f - _timeLeft) / 600f;
         Vignette.color = color;
     }
 }
