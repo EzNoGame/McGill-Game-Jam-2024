@@ -15,7 +15,7 @@ public class MenuButtonManager : Singleton<MenuButtonManager>
     public void Begin()
     {
         //TODO: Start the game
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("MainLevel");
     }
 
     // public void Continue()
