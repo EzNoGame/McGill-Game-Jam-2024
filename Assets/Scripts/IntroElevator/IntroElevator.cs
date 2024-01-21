@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public enum Sequence
 {
-    VIDEO,
-    LOOP,
+    LORE,
+    CONTROLS,
     FALL
 }
 
@@ -16,21 +17,22 @@ public class IntroElevator : MonoBehaviour
     [SerializeField] VideoPlayer _player;
     [SerializeField] RawImage _image;
     [SerializeField] BlackFade _fade;
+    [SerializeField] Image _bigBlack;
     private Sequence _sequence;
 
     void Awake()
     {
-        _sequence = Sequence.LOOP;
+        _sequence = Sequence.LORE;
+    }
+
+    void Start()
+    {
+        StartCoroutine(Enter());
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown("o"))
-        {
-            StartCoroutine(Enter());
-        }
-
-        if (Input.GetKeyDown("i"))
+        if (Input.GetKeyDown("j"))
         {
             StartCoroutine(Fall());
         }
@@ -43,21 +45,16 @@ public class IntroElevator : MonoBehaviour
         {
             yield return null;
         }
-        Debug.Log("Ready");
         _image.texture = _player.texture;
         _player.Play();
         _player.isLooping = true;
 
+        _bigBlack.enabled = false;
         StartCoroutine(_fade.FadeFromBlack(2f));
 
         StartCoroutine(CameraShake.Instance.BeginBounce(10f));
 
         yield return null;
-    }
-
-    public IEnumerator Loop()
-    {
-        yield break;
     }
 
     public IEnumerator Fall()
@@ -67,6 +64,7 @@ public class IntroElevator : MonoBehaviour
         float duration = 2.5f;
         float maxSpeed = 10f;
 
+        StartCoroutine(CameraShake.Instance.FlatShake(5f, duration + 1f));
         while (elapsed < duration)
         {
             float factor = elapsed / duration;
@@ -78,12 +76,13 @@ public class IntroElevator : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         _player.playbackSpeed = 0f;
-        StartCoroutine(CameraShake.Instance.DecreaseShake(30f, 3f));
+        StartCoroutine(CameraShake.Instance.DecreaseShake(40f, 3f));
 
         yield return new WaitForSeconds(2f);
 
         StartCoroutine(_fade.FadeToBlack(2f));
         yield return new WaitForSeconds(2f);
-        Debug.Log("done");
+        _bigBlack.enabled = true;
+        SceneManager.LoadScene("MainLevel");
     }
 }
