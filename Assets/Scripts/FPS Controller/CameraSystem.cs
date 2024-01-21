@@ -13,6 +13,7 @@ public class CameraSystem : Singleton<CameraSystem>
 
     public Transform _orientation;
 
+    [SerializeField] Camera _currentCam;
     private Camera thisCam;
     private Camera otherCam;
 
@@ -77,13 +78,18 @@ public class CameraSystem : Singleton<CameraSystem>
         otherCam = alt;
         thisCam.enabled = false;
         otherCam.enabled = true;
+        _currentCam = otherCam;
     }
 
     public void SwitchToFPSCam()
     {
         otherCam.enabled = false;
         thisCam.enabled = true;
-        otherCam = null;
+        //otherCam = null;
+        _currentCam = thisCam;
+
+        Debug.Log("heeeeere");
+
 
         FPSController.Instance.EnableInput();
         this.EnableInput();
