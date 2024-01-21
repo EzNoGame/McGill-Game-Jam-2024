@@ -9,6 +9,7 @@ public class CombinationLockLight : MonoBehaviour
 
     public void TurnOn()
     {
-        GetComponent<Renderer>().material = _onMaterial;
+        GetComponent<Light>().enabled = true;
+        GetComponent<Light>().color = Color.blue;
     }
 }
