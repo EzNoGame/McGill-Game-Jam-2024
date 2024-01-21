@@ -96,15 +96,9 @@ public class FPSController : Singleton<FPSController>
         _horizontalInput = input.x * _orientation.right +  input.y * _orientation.forward;
     }
 
-    // bool SprintCheck()
-    // {
-    //     return Input.GetKey(KeyCode.LeftShift);
-    // }
 
     void CalculateMovement()
     {
-        //bool isSprinting = SprintCheck();
-
         _movement = new Vector3(
             _horizontalInput.x*(_isSprinting?_sprintSpeed:_walkSpeed), 
             _verticalVelocity, 

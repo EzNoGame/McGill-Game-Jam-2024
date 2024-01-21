@@ -88,9 +88,6 @@ public class CameraSystem : Singleton<CameraSystem>
         //otherCam = null;
         _currentCam = thisCam;
 
-        Debug.Log("heeeeere");
-
-
         FPSController.Instance.EnableInput();
         this.EnableInput();
     }

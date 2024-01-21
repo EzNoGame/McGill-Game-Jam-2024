@@ -23,7 +23,6 @@ public class HidingPlace : MonoBehaviour, IInteractable
     {
         if (_hiding && _canExit && Input.GetKeyDown("e"))
         {
-            Debug.Log("YESYESYES");
             ExitHiding();
         }
 
@@ -49,15 +48,10 @@ public class HidingPlace : MonoBehaviour, IInteractable
     public void ExitHiding()
     {
         _hiding = false;
-        Debug.Log("1");
         InteractScript.Instance.UnOverride();
-        Debug.Log("2");
         CameraSystem.Instance.SwitchToFPSCam();
-        Debug.Log("3");
         FPSController.Instance.IsHiding = false;
-        Debug.Log("4");
         FPSController.Instance.ShowMesh();
-        Debug.Log("5");
     }
 
     public string GetDisplayText()
