@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Lock : Puzzle, IInteractable
@@ -18,6 +19,7 @@ public class Lock : Puzzle, IInteractable
         if (InventoryManager.Instance.GetSelectedItem().type == ItemType.Key)
         {
             Solved();
+            InventoryManager.Instance.DeleteSelectedItem();
         }
         else if(InventoryManager.Instance.GetSelectedItem().type == ItemType.Brick)
         {
