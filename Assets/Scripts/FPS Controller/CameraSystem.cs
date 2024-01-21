@@ -29,7 +29,7 @@ public class CameraSystem : Singleton<CameraSystem>
     
     private void FixedUpdate() {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 5f, 1<<6))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 10f, 1<<6))
         {
             Debug.DrawRay(transform.position, transform.forward * 10f, Color.red);
             if (_objLookingAt == hit.collider.gameObject) return;
@@ -59,7 +59,7 @@ public class CameraSystem : Singleton<CameraSystem>
         float distance = 3f;
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 3f, 1<<6))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10f, 1<<6))
         {
             distance = hit.distance;
         }
