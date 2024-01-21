@@ -30,7 +30,7 @@ public class MinotaurNavigation : MonoBehaviour
         //Check if has caught player (less than 1 meter away and not hiding)
         if(Vector3.Distance(transform.position,player.transform.position) < 3 && !FPSController.Instance.IsHiding){
             Debug.Log("Dead");
-            logic.lose();
+            logic.die();
         }
     
         //Update destination

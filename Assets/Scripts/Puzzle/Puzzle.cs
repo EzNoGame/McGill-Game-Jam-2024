@@ -11,11 +11,11 @@ public abstract class Puzzle : MonoBehaviour
     public UnityEvent onPuzzleSolved;
     public int GetID() => ID;
 
-    protected virtual void Solved()
+    public virtual void Solved()
     {
         SaveSystem.Instance.AddPuzzle(ID);
         Debug.Log("solved");
-        onPuzzleSolved.Invoke();
+        onPuzzleSolved?.Invoke();
         _solved = true;
         BroadcastSystem.PuzzleSolved?.Invoke(this);
     }

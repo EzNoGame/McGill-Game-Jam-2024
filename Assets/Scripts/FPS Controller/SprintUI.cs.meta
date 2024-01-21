@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Death Cutscene/CutsceneMinotaur.cs.meta
+guid: 2cb3180747b5b5047aae6027b49edbf8
+========
 guid: 5030677d2df8e6649a9d768ebc194fd8
+>>>>>>>> dfc3f9fad4db2526db094ad9bd4c17577af4ea9a:Assets/Scripts/FPS Controller/SprintUI.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
