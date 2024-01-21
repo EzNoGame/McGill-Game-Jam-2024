@@ -39,8 +39,9 @@ public class FPSController : Singleton<FPSController>
 
     public float HorizontalMaxSpeed => _walkSpeed;
 
-    [SerializeField] AudioSource walking;
+    [SerializeField] AudioSource running;
     [SerializeField] AudioSource panting;
+    [SerializeField] AudioSource hiding;
 
 
     void Start()
@@ -85,10 +86,11 @@ public class FPSController : Singleton<FPSController>
         CalculateMovement();
         _cc.Move(_movement * Time.deltaTime);
 
-        walking.enabled = _isSprinting;
-        // Debug.Log(_isSprinting);
+        running.enabled = _isSprinting;
+        
         panting.enabled =  _lockSprint || _stamina < 50 && !_isSprinting;
-        // Debug.Log(_lockSprint);
+        
+        hiding.enabled = IsHiding;
         
        
     }
