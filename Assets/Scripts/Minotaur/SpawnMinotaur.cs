@@ -9,6 +9,7 @@ public class SpawnMinotaur : MonoBehaviour
     public bool isPatroling;
     public List<Transform> patrolCheckpoints;
     public Logic logic;
+    public AudioClip roar;
 
     public float chasingSpeed;
     public float patrollingSpeed;
@@ -31,6 +32,7 @@ public class SpawnMinotaur : MonoBehaviour
             minoNav.chasingSpeed = chasingSpeed;
             minoNav.patrollingSpeed = patrollingSpeed;
             minoNav.isPatroling = isPatroling;
+            minoNav.roar = roar;
             if(isPatroling){
                 minoNav.patrolCheckPoints = patrolCheckpoints;
             }

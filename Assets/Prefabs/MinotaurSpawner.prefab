@@ -68,8 +68,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minotaurPrefab: {fileID: 3198869572706023245, guid: fd26cfb0aedec3c45b28e5d6f054558c, type: 3}
   spawnTransform: {fileID: 0}
-  isPatroling: 0
+  isPatroling: 1
   patrolCheckpoints: []
   logic: {fileID: 0}
+  roar: {fileID: 8300000, guid: a1ee1a2a17834104296a278147ad6528, type: 3}
   chasingSpeed: 6
   patrollingSpeed: 3

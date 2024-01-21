@@ -16,12 +16,14 @@ public class MinotaurNavigation : MonoBehaviour
     private bool gotJucked;
     private int patrolInteger;
     private Vector3 previousDestination;
+    private Animator animator;
 
     public AudioClip roar;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
         patrolInteger = 0;
         gotJucked = false;
         SoundFXManager.instance.PlaySoundFX(roar, transform, 1f); 
@@ -38,9 +40,16 @@ public class MinotaurNavigation : MonoBehaviour
     
         //Update destination
         if(isPatroling){
+            animator.SetBool("IsRunning",false);
             if(DistanceFromPlayer() < 20 && Vector3.Dot(transform.forward.normalized, (player.transform.position-transform.position).normalized)>0.8){
-                if(!Physics.Raycast(transform.position, player.transform.position-transform.position, 20)){
+                RaycastHit hit;
+                if(!Physics.Raycast(transform.position, player.transform.position-transform.position, out hit,20)){
                     isPatroling = false;
+                }
+                else{
+                    if(DistanceFromPlayer()<Vector3.Distance(transform.position,hit.point)){
+                        isPatroling = false;
+                    }
                 }
             }
             agent.speed = patrollingSpeed;
@@ -50,6 +59,7 @@ public class MinotaurNavigation : MonoBehaviour
             }
         }
         else{
+            animator.SetBool("IsRunning",true);
             //If hiding move to despawn
             if(FPSController.Instance.IsHiding){
                 if(agent.remainingDistance<0.4){
