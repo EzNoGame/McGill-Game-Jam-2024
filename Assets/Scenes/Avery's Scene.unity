@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571328, b: 0.3069218, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -726,7 +726,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 280fa321e6068bcdeae983b56e51aa81, type: 3}
---- !u!1001 &791976870
+--- !u!1001 &762663519
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -736,11 +736,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3198869572706023245, guid: fd26cfb0aedec3c45b28e5d6f054558c, type: 3}
       propertyPath: m_Name
-      value: Minotaur
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198869572706023245, guid: fd26cfb0aedec3c45b28e5d6f054558c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: Minotaur (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3201848554498114971, guid: fd26cfb0aedec3c45b28e5d6f054558c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1876,7 +1872,7 @@ SceneRoots:
   - {fileID: 20332354}
   - {fileID: 122845546}
   - {fileID: 2112279303}
-  - {fileID: 791976870}
   - {fileID: 909111631}
   - {fileID: 411833713}
   - {fileID: 1998011850}
+  - {fileID: 762663519}
