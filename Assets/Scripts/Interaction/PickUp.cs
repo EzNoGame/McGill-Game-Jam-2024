@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour, IInteractable
@@ -8,7 +9,13 @@ public class PickUp : MonoBehaviour, IInteractable
     [SerializeField] Item _item;
 
     [SerializeField] bool _interactable = true;
+     
+    AudioClip pickUpClip = null;
+    
+    public void Start() {
+        pickUpClip = Resources.Load<AudioClip>("AudioClips/Pick_up_item");
 
+    }
     public void Interact()
     {
         if (!_interactable)
@@ -16,6 +23,9 @@ public class PickUp : MonoBehaviour, IInteractable
 
         if (InventoryManager.Instance.AddItem(_item))
         {
+            if (pickUpClip != null) {
+            SoundFXManager.instance.PlaySoundFX(pickUpClip, transform, 1f); }
+
             if(transform.parent != null)
             {
                 Debug.Log("remove a gear from a knob");
