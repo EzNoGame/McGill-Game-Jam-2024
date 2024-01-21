@@ -13,6 +13,6 @@ public class Buttons : MonoBehaviour
 
     public void restart() {
         Debug.Log("restart");
-        SceneManager.LoadSceneAsync("Main");
+        SceneManager.LoadSceneAsync("MainLevel");
     }
 }
