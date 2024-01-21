@@ -17,6 +17,8 @@ public class CameraSystem : Singleton<CameraSystem>
     private Camera thisCam;
     private Camera otherCam;
 
+    [SerializeField] Transform _camPos;
+
     private bool _controlEnabled;
 
     private void Start() 
@@ -70,23 +72,27 @@ public class CameraSystem : Singleton<CameraSystem>
         return _objLookingAt;
     }
 
-    public void SwitchToAlternativeCam(Camera alt)
+    public void SwitchToAlternativeCam(Transform t)
     {
         FPSController.Instance.DisableInput();
         this.DisableInput();
 
-        otherCam = alt;
-        thisCam.enabled = false;
-        otherCam.enabled = true;
-        _currentCam = otherCam;
+        this.transform.SetPositionAndRotation(t.position, t.rotation);
+
+        // otherCam = alt;
+        // thisCam.enabled = false;
+        // otherCam.enabled = true;
+        // _currentCam = otherCam;
     }
 
     public void SwitchToFPSCam()
     {
-        otherCam.enabled = false;
-        thisCam.enabled = true;
+        // otherCam.enabled = false;
+        // thisCam.enabled = true;
         //otherCam = null;
-        _currentCam = thisCam;
+        // _currentCam = thisCam;
+
+        this.transform.SetPositionAndRotation(_camPos.position, _camPos.rotation);
 
         FPSController.Instance.EnableInput();
         this.EnableInput();

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HidingPlace : MonoBehaviour, IInteractable
 {
     [SerializeField] Camera _hideCam;
+    [SerializeField] Transform _camPos;
     private Camera _mainCam;
     private bool _canExit;
     private bool _hiding;
@@ -39,7 +40,7 @@ public class HidingPlace : MonoBehaviour, IInteractable
         _hiding = true;
         InteractScript.Instance.Override();
         StartCoroutine(KeyDelay());
-        CameraSystem.Instance.SwitchToAlternativeCam(_hideCam);
+        CameraSystem.Instance.SwitchToAlternativeCam(_camPos);
         FPSController.Instance.IsHiding = true;
         FPSController.Instance.HideMesh();
         InteractUI.Instance.Show("Exit hiding");
