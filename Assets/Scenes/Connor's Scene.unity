@@ -152,7 +152,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -228,10 +228,6 @@ PrefabInstance:
     - target: {fileID: 2840692559233497028, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3381111858142117284, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
-      propertyPath: Hand
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7250158203749518290, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -799,51 +795,6 @@ MonoBehaviour:
   _name: Gear
   _item: {fileID: 11400000, guid: 2f9ffa5cef0a6fa40bfa3c35ca17e2cf, type: 2}
   _interactable: 1
---- !u!1 &896156385
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 896156387}
-  - component: {fileID: 896156386}
-  m_Layer: 0
-  m_Name: CamHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &896156386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896156385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0c2649bb1bdb364e8b64d3de62606c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CameraPos: {fileID: 1266621377}
---- !u!4 &896156387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896156385}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898504262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1066480756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5030677d2df8e6649a9d768ebc194fd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cb3180747b5b5047aae6027b49edbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _fill: {fileID: 518974241}
@@ -1469,11 +1420,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117386868}
   m_CullTransparentMesh: 1
---- !u!4 &1266621377 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4249976707986608857, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
-  m_PrefabInstance: {fileID: 140724891}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1271071983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,7 +2339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7479741997353491869, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.06
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7479741997353491869, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2401,7 +2347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7479741997353491869, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7479741997353491869, guid: 1c82252c69e120c409927d5d8e2b0407, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2556,7 +2502,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 34344448}
   - {fileID: 981565862}
-  - {fileID: 896156387}
   - {fileID: 140724891}
   - {fileID: 3193346978502334977}
   - {fileID: 2099724096}
