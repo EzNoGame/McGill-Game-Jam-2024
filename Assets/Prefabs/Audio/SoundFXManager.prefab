@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 0
-  soundFXObj: {fileID: 0}
+  soundFXObj: {fileID: 4889174730500973072, guid: f6b60151b61f8c84f9ef36bd9b2ce9d2, type: 3}
