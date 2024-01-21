@@ -19,6 +19,7 @@ public class MinotaurNavigation : MonoBehaviour
     private Animator animator;
 
     public AudioClip roar;
+    public AudioSource stomp;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +82,8 @@ public class MinotaurNavigation : MonoBehaviour
                 ChasePlayer();
             }
         }
+        stomp.enabled = animator.GetBool("IsRunning");
+        Debug.Log("IsRunning");
     }
 
     private void ChasePlayer()
