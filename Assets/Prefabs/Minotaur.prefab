@@ -95,9 +95,13 @@ MonoBehaviour:
   player: {fileID: 0}
   logic: {fileID: 0}
   chasingSpeed: 6
-  patrollingSpeed: 1
-  isPatroling: 0
-  patrolCheckPoints: []
+  patrollingSpeed: 3
+  isPatroling: 1
+  patrolCheckPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   roar: {fileID: 8300000, guid: a1ee1a2a17834104296a278147ad6528, type: 3}
 --- !u!1001 &3356397876752622490
 PrefabInstance:
