@@ -35,6 +35,7 @@ public class MinotaurNavigation : MonoBehaviour
         //Check if has caught player (less than 1 meter away and not hiding)
         if(DistanceFromPlayer() < 3 && !FPSController.Instance.IsHiding){
             // Debug.Log("Dead");
+            //stop chasing
             logic.die();
         }
     
@@ -59,6 +60,7 @@ public class MinotaurNavigation : MonoBehaviour
             }
         }
         else{
+            //chasing
             animator.SetBool("IsRunning",true);
             //If hiding move to despawn
             if(FPSController.Instance.IsHiding){
@@ -70,6 +72,7 @@ public class MinotaurNavigation : MonoBehaviour
                     gotJucked = true;
                 }
                 if(Vector3.Distance(transform.position,previousDestination) > 10 && gotJucked){
+                    //stopped chasing
                     Destroy(gameObject);
                 }
             }
