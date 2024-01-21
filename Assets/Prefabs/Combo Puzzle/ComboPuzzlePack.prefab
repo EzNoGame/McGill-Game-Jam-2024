@@ -91,7 +91,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -103,7 +103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.422
+      value: -9.58
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -138,9 +138,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
---- !u!114 &3502488790161973985 stripped
+--- !u!114 &428293383585552911 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1316942383313868691, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2822759097419722621, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
   m_PrefabInstance: {fileID: 2512426820036474226}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -173,7 +173,7 @@ PrefabInstance:
     - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3502488790161973985}
+      objectReference: {fileID: 428293383585552911}
     - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
