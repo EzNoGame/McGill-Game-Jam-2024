@@ -14,11 +14,11 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.31553575, g: 0.3433962, b: 0.33503807, a: 1}
   m_FogMode: 1
   m_FogDensity: 1
-  m_LinearFogStart: -46.4
+  m_LinearFogStart: -45.85
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
@@ -13634,7 +13634,11 @@ PrefabInstance:
       objectReference: {fileID: 1732593233}
     - target: {fileID: 5520649229127502064, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5636612541294505725, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_RenderingPath
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7250158203749518290, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13682,11 +13686,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7604729182684725217, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7604729182684725217, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5
+      value: 0.903
       objectReference: {fileID: 0}
     - target: {fileID: 7604729182684725217, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13719,7 +13723,7 @@ PrefabInstance:
     - target: {fileID: 8809414807305931274, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bcb98a6218376f04c969734d58a6731f, type: 2}
+      objectReference: {fileID: 2100000, guid: 1b658e5782364aa468625d45bd6c043c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -14121,7 +14125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1551839537
 Transform:
   m_ObjectHideFlags: 0
