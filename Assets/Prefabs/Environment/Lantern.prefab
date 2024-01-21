@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shouldFlicker: 1
-  _flickerSpeed: 1.45
+  _flickerSpeed: 1
   _lightSource: {fileID: 8161844160168589861}
 --- !u!1 &6155589309456405692
 GameObject:
