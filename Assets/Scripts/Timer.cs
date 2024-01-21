@@ -7,7 +7,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public float _timeLeft;
-    private float _maxTime = 305;
+    private float _maxTime = 900;
     private bool _timerOn;
 
     public Image Vignette;
