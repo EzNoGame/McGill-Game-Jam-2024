@@ -75,11 +75,19 @@ PrefabInstance:
     m_TransformParent: {fileID: 1238801729171143634}
     m_Modifications:
     - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
-      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: ID
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
@@ -91,7 +99,15 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: go
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: go
       objectReference: {fileID: 0}
     - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
@@ -99,7 +115,15 @@ PrefabInstance:
       value: WallController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ElevatorController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831492488534679157, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9008617187659943176, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
@@ -120,15 +144,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9102967810181887898, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.932
       objectReference: {fileID: 0}
     - target: {fileID: 9102967810181887898, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.834
       objectReference: {fileID: 0}
     - target: {fileID: 9102967810181887898, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 6.505
       objectReference: {fileID: 0}
     - target: {fileID: 9102967810181887898, guid: f06e4297b27fbaa44a02e6d135c6f9ed, type: 3}
       propertyPath: m_LocalRotation.w
@@ -186,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalScale.y
@@ -194,19 +218,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.8
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.96
+      value: 7.94
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -275,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8941781505145324713, guid: 0d80a74e5611ba9468cb9ef3755b50ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14
+      value: -1.233
       objectReference: {fileID: 0}
     - target: {fileID: 8941781505145324713, guid: 0d80a74e5611ba9468cb9ef3755b50ba, type: 3}
       propertyPath: m_LocalPosition.z

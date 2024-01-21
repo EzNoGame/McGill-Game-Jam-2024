@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8022692304438151097}
   - component: {fileID: 2706338745173479555}
   - component: {fileID: 2617602010862375176}
+  - component: {fileID: 7614444277041938592}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -40,6 +41,7 @@ Transform:
   - {fileID: 1207040292517470962}
   - {fileID: 8157883404807135354}
   - {fileID: 4249976707986608857}
+  - {fileID: 8600459493769547066}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8651338223476039197
@@ -118,8 +120,9 @@ MonoBehaviour:
   _drainRate: 25
   _isSprinting: 0
   _lockSprint: 0
-  walking: {fileID: 2706338745173479555}
+  running: {fileID: 0}
   panting: {fileID: 2617602010862375176}
+  hiding: {fileID: 0}
 --- !u!114 &8022692304438151097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +327,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7614444277041938592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840692559233497028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477ddbc2c5f626026a6998b8223041e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _brick: {fileID: 11400000, guid: a1bb040d181273c42a27128ce577fee2, type: 2}
 --- !u!1 &3443924085064404432
 GameObject:
   m_ObjectHideFlags: 0

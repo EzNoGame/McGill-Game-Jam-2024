@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1069752460201719991}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.487, z: -1.046}
+  m_LocalPosition: {x: 0, y: 0.12, z: -1.046}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,7 +87,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 95192187c7558544a995933d6417c4ab, type: 3}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalScale.y
@@ -95,11 +95,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -55.46
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -107,7 +107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.58
+      value: -61.2
       objectReference: {fileID: 0}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -168,10 +168,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
@@ -183,7 +187,15 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: go
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: go
       objectReference: {fileID: 0}
     - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
@@ -191,7 +203,15 @@ PrefabInstance:
       value: WallController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ElevatorController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
       propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712163217726875000, guid: afced5d636cc92214ab276a57a070603, type: 3}
+      propertyPath: onPuzzleSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1933175984564969194, guid: afced5d636cc92214ab276a57a070603, type: 3}
@@ -204,15 +224,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1933175984564969194, guid: afced5d636cc92214ab276a57a070603, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -12.86
       objectReference: {fileID: 0}
     - target: {fileID: 1933175984564969194, guid: afced5d636cc92214ab276a57a070603, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 6.45
       objectReference: {fileID: 0}
     - target: {fileID: 1933175984564969194, guid: afced5d636cc92214ab276a57a070603, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 1933175984564969194, guid: afced5d636cc92214ab276a57a070603, type: 3}
       propertyPath: m_LocalRotation.w

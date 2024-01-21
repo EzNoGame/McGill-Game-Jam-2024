@@ -51,4 +51,10 @@ public class GearPuzzle : Puzzle
         Solved();
     }
 
+    public override void Solved()
+    {
+        base.Solved();
+        GetComponent<Animator>().Play("GearSolved");
+    }
+
 }
