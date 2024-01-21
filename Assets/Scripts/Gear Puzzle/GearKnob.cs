@@ -79,6 +79,7 @@ public class GearKnob : MonoBehaviour, IInteractable
 
             gear.transform.parent = transform;
             gear.GetComponent<PickUp>().ToggleInteractability();
+            gear.transform.localRotation = Quaternion.LookRotation(transform.right);
 
             BroadcastSystem.GearInstalled?.Invoke(_inputGearSize, transform.parent.gameObject);
         }
