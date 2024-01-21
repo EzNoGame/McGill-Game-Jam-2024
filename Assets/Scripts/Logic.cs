@@ -20,6 +20,8 @@ public class Logic : MonoBehaviour
         SceneManager.LoadSceneAsync("LoseScreen");
     }
 
+    
+
 
 
 }
