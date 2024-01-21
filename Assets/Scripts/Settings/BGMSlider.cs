@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class BGMSlider : MonoBehaviour 
 {
+
+    public SoundMixerManager mixer;
     public void OnChangeBGMVolume()
     {
-        float value = GetComponent<UnityEngine.UI.Slider>().value;
-        AudioSystem.Instance.SetBGMVolume(value);
+        float value = GameObject.Find("Main").GetComponent<UnityEngine.UI.Slider>().value;
+        mixer.SetMasterVolume(value);
     }
 }
