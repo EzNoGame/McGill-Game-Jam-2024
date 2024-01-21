@@ -116,7 +116,7 @@ MonoBehaviour:
   onPuzzleSolved:
     m_PersistentCalls:
       m_Calls: []
-  _combination: 01000000020000000300000004000000
+  _combination: 06000000080000000400000002000000
   _lights:
   - {fileID: 5021947044807021838}
   - {fileID: 5129864820702515721}
