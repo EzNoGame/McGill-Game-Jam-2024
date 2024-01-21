@@ -86,9 +86,9 @@ public class FPSController : Singleton<FPSController>
         _cc.Move(_movement * Time.deltaTime);
 
         walking.enabled = _isSprinting;
-        Debug.Log(_isSprinting);
+        // Debug.Log(_isSprinting);
         panting.enabled =  _lockSprint || _stamina < 50 && !_isSprinting;
-        Debug.Log(_lockSprint);
+        // Debug.Log(_lockSprint);
         
        
     }

@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5697152840010153485}
-  - component: {fileID: 8543989073011535027}
-  - component: {fileID: 8080833901415309889}
-  - component: {fileID: 7096378144534810843}
   - component: {fileID: 5273751769617380794}
   m_Layer: 0
   m_Name: MoveableWall
@@ -36,6 +33,20 @@ Transform:
   - {fileID: 2484051254868313396}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5273751769617380794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38746775899723874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d3d08cf59f9374385f1f0b7623dc3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shift: 10
+  wallMoveAudio: {fileID: 8300000, guid: 95192187c7558544a995933d6417c4ab, type: 3}
 --- !u!1 &7460950206669525759
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shift: -11
+  wallMoveAudio: {fileID: 8300000, guid: 95192187c7558544a995933d6417c4ab, type: 3}
 --- !u!65 &6620051041119775308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -254,17 +266,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5273751769617380794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38746775899723874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3d3d08cf59f9374385f1f0b7623dc3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shift: 10
-  wallMoveAudio: {fileID: 8300000, guid: 95192187c7558544a995933d6417c4ab, type: 3}
