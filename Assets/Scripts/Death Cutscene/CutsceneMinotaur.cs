@@ -7,24 +7,26 @@ using UnityEngine.AI;
 public class CutsceneMinotaur : MonoBehaviour
 {
     
-    public GameObject player;
+    public AudioClip roar;
+
+    public Transform player;
     public float speed;
     public Logic logic;
     public Animator animator;
     public float dist;
 
-    // Update is called once per frame
+   
+
+    void Start() {
+        GameObject.Find("Player").GetComponent<Transform>();
+        SoundFXManager.instance.PlaySoundFX(roar, transform, 1f); 
+    }
     void Update()
     {
-        Vector3 target = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        Vector3 target = new Vector3(player.position.x, transform.position.y, player.position.z);
         transform.position = Vector3.Lerp(transform.position, target, speed * Time.deltaTime);
-        Debug.Log(target.z  - transform.position.z);
-
-
-        if(target.z  - transform.position.z > dist){
-            
+        if(target.z  - transform.position.z < dist){
             animator.SetTrigger("FadeOut");
-            
         }
     }
 }

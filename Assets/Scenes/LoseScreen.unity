@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571328, b: 0.3069218, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 12082930}
   - component: {fileID: 12082929}
   - component: {fileID: 12082933}
-  - component: {fileID: 12082934}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -251,19 +250,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &12082934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12082928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55ce094d7e7dd1daf8427f247177d522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Aur_Aur_Aur: {fileID: 8300000, guid: a8b8f4d3d3069ba82bdd11c05ddedae8, type: 3}
 --- !u!1001 &152643596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -337,6 +323,7 @@ GameObject:
   - component: {fileID: 234726434}
   - component: {fileID: 234726433}
   - component: {fileID: 234726432}
+  - component: {fileID: 234726435}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -418,6 +405,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &234726435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234726431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ce094d7e7dd1daf8427f247177d522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Aur_Aur_Aur: {fileID: 8300000, guid: a8b8f4d3d3069ba82bdd11c05ddedae8, type: 3}
 --- !u!1 &523571167
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +842,18 @@ PrefabInstance:
     - target: {fileID: 5280741054308851225, guid: 43efe7db1c7e3e842a50963d22ed1240, type: 3}
       propertyPath: m_Name
       value: SoundFXManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316541403239548021, guid: 43efe7db1c7e3e842a50963d22ed1240, type: 3}
+      propertyPath: spread
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316541403239548021, guid: 43efe7db1c7e3e842a50963d22ed1240, type: 3}
+      propertyPath: volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316541403239548021, guid: 43efe7db1c7e3e842a50963d22ed1240, type: 3}
+      propertyPath: doppler
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8925042906207378176, guid: 43efe7db1c7e3e842a50963d22ed1240, type: 3}
       propertyPath: m_LocalPosition.x
