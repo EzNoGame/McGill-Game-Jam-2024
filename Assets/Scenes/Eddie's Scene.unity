@@ -492,8 +492,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1086,6 +1086,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7209986817801032980, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7209986817801032980, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.22589916
+      objectReference: {fileID: 0}
+    - target: {fileID: 7209986817801032980, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.14392135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7209986817801032980, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.08716745
+      objectReference: {fileID: 0}
     - target: {fileID: 7250158203749518290, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.30033493
@@ -1343,11 +1359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3777890608682712960, guid: 3dd8b441d14f99566a31b53c823bd81b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.46566668
+      value: 0.38233334
       objectReference: {fileID: 0}
     - target: {fileID: 3777890608682712960, guid: 3dd8b441d14f99566a31b53c823bd81b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4856666
+      value: 0.4023333
       objectReference: {fileID: 0}
     - target: {fileID: 3777890608682712960, guid: 3dd8b441d14f99566a31b53c823bd81b, type: 3}
       propertyPath: m_LocalPosition.z
