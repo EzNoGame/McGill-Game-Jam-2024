@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.024457525, g: 0.030405499, b: 0.05024281, a: 1}
+  m_IndirectSpecularColor: {r: 0.024589257, g: 0.030522203, b: 0.05027005, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27177,6 +27177,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4374620356444352145, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_Range
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374620356444352145, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374620356444352145, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_SpotAngle
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374620356444352145, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894433890674422378, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7250158203749518290, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -27216,6 +27236,18 @@ PrefabInstance:
     - target: {fileID: 7250158203749518290, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268356953060255647, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.046
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268356953060255647, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268356953060255647, guid: a72dda9a8664e544da4a466b5d4f9a5c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.533
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
