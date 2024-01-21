@@ -18,9 +18,10 @@ GameObject:
   - component: {fileID: 7614444277041938592}
   - component: {fileID: 2400160917100427800}
   - component: {fileID: 7871755995876768403}
+  - component: {fileID: 8719913493040628460}
   m_Layer: 2
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,6 +535,102 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &8719913493040628460
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840692559233497028}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1f138bf3a8199a74bbebfedbe4d7b501, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3443924085064404432
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +801,7 @@ Transform:
   m_GameObject: {fileID: 6310965087759571786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.593, y: -0.357, z: 0.562}
+  m_LocalPosition: {x: 0, y: -0.357, z: 0.562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -835,7 +932,7 @@ GameObject:
   - component: {fileID: 8268356953060255647}
   - component: {fileID: 4374620356444352145}
   - component: {fileID: 6912232979796467320}
-  - component: {fileID: 6962995681671479401}
+  - component: {fileID: 7574563454601788277}
   m_Layer: 2
   m_Name: Flashlight
   m_TagString: Untagged
@@ -852,7 +949,7 @@ Transform:
   m_GameObject: {fileID: 8409316182720341491}
   serializedVersion: 2
   m_LocalRotation: {x: -0.021029737, y: -0.053372253, z: -0.002208027, w: 0.9983508}
-  m_LocalPosition: {x: 0.721, y: 0.117999986, z: -0.2339999}
+  m_LocalPosition: {x: -0.046, y: 0.33, z: 0.533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -871,9 +968,9 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.9411765, g: 0.8425267, b: 0.38823527, a: 1}
   m_Intensity: 5
-  m_Range: 80
-  m_SpotAngle: 40
-  m_InnerSpotAngle: 4
+  m_Range: 200
+  m_SpotAngle: 35
+  m_InnerSpotAngle: 3
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -935,7 +1032,7 @@ MonoBehaviour:
   _followCam: {fileID: 4894433890674422378}
   _followOrient: {fileID: 0}
   _speed: 10
---- !u!114 &6962995681671479401
+--- !u!114 &7574563454601788277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
