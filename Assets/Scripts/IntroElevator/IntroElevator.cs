@@ -62,7 +62,7 @@ public class IntroElevator : MonoBehaviour
 
     public IEnumerator Fall()
     {
-        CameraShake.Instance.IsBouncing = false;
+        CameraShake.Instance.EndBounce();
         float elapsed = 0f;
         float duration = 2.5f;
         float maxSpeed = 10f;

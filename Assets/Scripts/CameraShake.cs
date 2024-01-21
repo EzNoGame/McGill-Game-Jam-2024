@@ -12,7 +12,8 @@ public class CameraShake : MonoBehaviour
     [SerializeField] AnimationCurve _decreaseCurve;
     [SerializeField] AnimationCurve _bounceCurve;
 
-    public bool IsBouncing;
+    private bool _isBouncing;
+    private bool _isChased;
 
     private void Awake()
     {
@@ -35,6 +36,11 @@ public class CameraShake : MonoBehaviour
         if (Input.GetKeyDown("p"))
         {
             StartCoroutine(Bounce(0.2f));
+        }
+
+        if (Input.GetKeyDown("c"))
+        {
+            StartCoroutine(BeginChased(10f));
         }
     }
 
@@ -76,12 +82,17 @@ public class CameraShake : MonoBehaviour
 
     public IEnumerator BeginBounce(float strength)
     {
-        IsBouncing = true;
-        while (IsBouncing)
+        _isBouncing = true;
+        while (_isBouncing)
         {
             StartCoroutine(Bounce(strength));
             yield return new WaitForSeconds(1.5f);
         }
+    }
+
+    public void EndBounce()
+    {
+        _isBouncing = false;
     }
 
     public IEnumerator Bounce(float strength)
@@ -101,6 +112,21 @@ public class CameraShake : MonoBehaviour
         
         transform.localPosition = Vector3.zero;
         yield break;
+    }
+
+    public IEnumerator BeginChased(float strength)
+    {
+        _isChased = true;
+        while (_isChased)
+        {
+            StartCoroutine(FlatShake(strength, 0.1f));
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    public void EndChased()
+    {
+        _isChased = false;
     }
 
 }
