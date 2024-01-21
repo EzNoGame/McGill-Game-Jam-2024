@@ -5,6 +5,7 @@ using UnityEngine;
 public class WallController : MonoBehaviour
 {   
     public float shift;
+    public AudioClip wallMoveAudio;
     public void go()
     {
         StartCoroutine(moveWallUp(7f));
@@ -12,6 +13,7 @@ public class WallController : MonoBehaviour
 
     public IEnumerator moveWallUp(float duration)
     {
+        SoundFXManager.instance.PlaySoundFX(wallMoveAudio, transform, 1f);
         Vector3 origin = transform.position;
         Vector3 target = new Vector3(origin.x, origin.y + shift, origin.z);
         float elapsed = 0f;

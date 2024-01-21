@@ -81,6 +81,10 @@ PrefabInstance:
       propertyPath: shift
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1316942383313868691, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
+      propertyPath: wallMoveAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 95192187c7558544a995933d6417c4ab, type: 3}
     - target: {fileID: 5697152840010153485, guid: fc7c654f5cde15f40998c10b7b00fcb3, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
