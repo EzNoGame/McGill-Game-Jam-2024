@@ -18,7 +18,7 @@ public class CutsceneMinotaur : MonoBehaviour
    
 
     void Start() {
-        GameObject.Find("Player").GetComponent<Transform>();
+        GameObject.Find("Camera").GetComponent<Transform>();
         SoundFXManager.instance.PlaySoundFX(roar, transform, 1f); 
     }
     void Update()
