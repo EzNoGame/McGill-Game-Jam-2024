@@ -14,7 +14,6 @@ public class PickUp : MonoBehaviour, IInteractable
     
     public void Start() {
         pickUpClip = Resources.Load<AudioClip>("AudioClips/Pick_up_item");
-        if (pickUpClip != null) Debug.Log("pickupclip");
 
     }
     public void Interact()
@@ -24,9 +23,9 @@ public class PickUp : MonoBehaviour, IInteractable
 
         if (InventoryManager.Instance.AddItem(_item))
         {
-            
-            SoundFXManager.instance.PlaySoundFX(pickUpClip, transform, 1f);
-            //if (pickUpClip != null) {}
+            if (pickUpClip != null) {
+                SoundFXManager.instance.PlaySoundFX(pickUpClip, transform, 1f); 
+            }
 
             if(transform.parent != null)
             {
