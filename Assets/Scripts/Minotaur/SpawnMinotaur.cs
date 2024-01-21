@@ -39,9 +39,4 @@ public class SpawnMinotaur : MonoBehaviour
         }
         
     }
-    private void OnTriggerExit(Collider other){
-        if(isPatroling){
-            Destroy(minotaur);
-        }
-    }
 }
