@@ -49,7 +49,7 @@ public class CombinationLock : Puzzle
             Debug.Log("Lock Unlocked");
             foreach (var light in _lights)
             {
-                light.gameObject.GetComponent<Renderer>().material = _passMaterial;
+                light.gameObject.GetComponent<Light>().color = Color.green;
             }
         }
         else if(_userInput.Count == _lights.Count)
@@ -57,7 +57,7 @@ public class CombinationLock : Puzzle
             Debug.Log("Wrong combination!");
             foreach (var light in _lights)
             {
-                light.gameObject.GetComponent<Renderer>().material = _failMaterial;
+                light.gameObject.GetComponent<Light>().color = Color.red;
             }
             _userInput.Clear();
         }
