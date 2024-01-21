@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BlackFade : MonoBehaviour
 {
     private float _elapsed;
-    private Image _black;
+    [SerializeField] Image _black;
     private Color _baseBlack = new Color(0, 0, 0, 0);
     private bool _fading;
 

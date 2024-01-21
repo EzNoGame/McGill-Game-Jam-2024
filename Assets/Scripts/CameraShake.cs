@@ -12,6 +12,8 @@ public class CameraShake : MonoBehaviour
     [SerializeField] AnimationCurve _decreaseCurve;
     [SerializeField] AnimationCurve _bounceCurve;
 
+    public bool IsBouncing;
+
     private void Awake()
     {
         _cam = GetComponent<Camera>();
@@ -36,7 +38,7 @@ public class CameraShake : MonoBehaviour
         }
     }
 
-    IEnumerator FlatShake(float strength, float duration)
+    public IEnumerator FlatShake(float strength, float duration)
     {
         float elapsed = 0f;
         while (elapsed < duration)
@@ -53,7 +55,7 @@ public class CameraShake : MonoBehaviour
         yield break;
     }
 
-    IEnumerator DecreaseShake(float initialStrength, float duration)
+    public IEnumerator DecreaseShake(float initialStrength, float duration)
     {
         float elapsed = 0f;
         float factor = 0f;
@@ -72,7 +74,17 @@ public class CameraShake : MonoBehaviour
         yield break;
     }
 
-    IEnumerator Bounce(float strength)
+    public IEnumerator BeginBounce(float strength)
+    {
+        IsBouncing = true;
+        while (IsBouncing)
+        {
+            StartCoroutine(Bounce(strength));
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
+
+    public IEnumerator Bounce(float strength)
     {
         float elapsed = 0f;
         float duration = _bounceCurve[_bounceCurve.length - 1].time;
