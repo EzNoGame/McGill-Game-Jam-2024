@@ -39,4 +39,10 @@ public class Lock : Puzzle, IInteractable
     {
         return _displayText;
     }
+
+    public override void Solved()
+    {
+        base.Solved();
+        GetComponentInChildren<Light>().color = Color.green;
+    }
 }
