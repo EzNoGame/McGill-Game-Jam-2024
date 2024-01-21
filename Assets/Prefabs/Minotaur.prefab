@@ -98,6 +98,7 @@ MonoBehaviour:
   patrollingSpeed: 1
   isPatroling: 0
   patrolCheckPoints: []
+  roar: {fileID: 8300000, guid: a1ee1a2a17834104296a278147ad6528, type: 3}
 --- !u!1001 &3356397876752622490
 PrefabInstance:
   m_ObjectHideFlags: 0
