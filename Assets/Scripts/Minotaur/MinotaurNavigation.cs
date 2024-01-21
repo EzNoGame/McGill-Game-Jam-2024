@@ -25,20 +25,24 @@ public class MinotaurNavigation : MonoBehaviour
         patrolInteger = 0;
         gotJucked = false;
         SoundFXManager.instance.PlaySoundFX(roar, transform, 1f); 
-
     }
 
     // Update is called once per frame
     void Update()
     {
         //Check if has caught player (less than 1 meter away and not hiding)
-        if(Vector3.Distance(transform.position,player.transform.position) < 3 && !FPSController.Instance.IsHiding){
-            Debug.Log("Dead");
+        if(DistanceFromPlayer() < 3 && !FPSController.Instance.IsHiding){
+            // Debug.Log("Dead");
             logic.die();
         }
     
         //Update destination
         if(isPatroling){
+            if(DistanceFromPlayer() < 20 && Vector3.Dot(transform.forward.normalized, (player.transform.position-transform.position).normalized)>0.8){
+                if(!Physics.Raycast(transform.position, player.transform.position-transform.position, 20)){
+                    isPatroling = false;
+                }
+            }
             agent.speed = patrollingSpeed;
             if(agent.remainingDistance<0.2){
                 patrolInteger++;
@@ -75,5 +79,7 @@ public class MinotaurNavigation : MonoBehaviour
         isPatroling = true;
         agent.destination = patrolCheckPoints[patrolInteger].transform.position;
     }
-    
+    private float DistanceFromPlayer(){
+        return Vector3.Distance(transform.position,player.transform.position);
+    }
 }
