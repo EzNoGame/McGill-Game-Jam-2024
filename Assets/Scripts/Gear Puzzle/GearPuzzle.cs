@@ -9,8 +9,8 @@ public class GearPuzzle : Puzzle
     private List<GearKnob> _gearKnobs;
     [SerializeField]
     private Material _passMaterial, _failMaterial;
-    [SerializeField]
-    private GameObject _light;
+    // [SerializeField]
+    // private GameObject _light;
 
     public void OnEnable()
     {
@@ -39,7 +39,7 @@ public class GearPuzzle : Puzzle
         {
             if(!_gearKnobs[i].Match())
             {
-                _light.GetComponent<Renderer>().material = _failMaterial;
+                // _light.GetComponent<Renderer>().material = _failMaterial;
                 foreach(GearKnob knob in _gearKnobs)
                 {
                     knob.GetComponentInChildren<PickUp>().ToggleInteractability();
@@ -47,7 +47,7 @@ public class GearPuzzle : Puzzle
                 return;
             }
         }
-        _light.GetComponent<Renderer>().material = _passMaterial;
+        // _light.GetComponent<Renderer>().material = _passMaterial;
         Solved();
     }
 
