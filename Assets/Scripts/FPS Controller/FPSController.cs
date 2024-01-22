@@ -24,8 +24,10 @@ public class FPSController : Singleton<FPSController>
 
     private Vector3 _horizontalInput;
     private CharacterController _cc;
-    private float _verticalVelocity = -9.8f;
+    [SerializeField] float _verticalVelocity = -9.8f;
     private Vector3 _movement;
+    private bool _enableJump;
+    private float _jumpAccel = 15f;
 
 
     private bool _controlEnabled;
@@ -35,6 +37,7 @@ public class FPSController : Singleton<FPSController>
     [SerializeField] float _drainRate = 25f;
     [SerializeField] bool _isSprinting;
     [SerializeField] bool _lockSprint;
+    
 
 
     public float HorizontalMaxSpeed => _walkSpeed;
@@ -42,6 +45,8 @@ public class FPSController : Singleton<FPSController>
     [SerializeField] AudioSource running;
     [SerializeField] AudioSource panting;
     [SerializeField] AudioSource hiding;
+
+    public GameObject CSPlane;
 
 
     void Start()
@@ -56,6 +61,7 @@ public class FPSController : Singleton<FPSController>
 
         _isSprinting = false;
         _lockSprint = false;
+        _enableJump = false;
 
         IsHiding = false;
 
@@ -112,11 +118,27 @@ public class FPSController : Singleton<FPSController>
     {
         Vector2 input = VerticalInputThreashHold();
         _horizontalInput = input.x * _orientation.right +  input.y * _orientation.forward;
+
+        
     }
 
 
     void CalculateMovement()
     {
+        if (!_cc.isGrounded)
+        {
+            _verticalVelocity -= 35f * Time.deltaTime;
+        }
+        else
+        {
+            _verticalVelocity = 0f;
+        }
+
+        if (Input.GetKeyDown("space") && _enableJump)
+        {
+            _verticalVelocity += _jumpAccel;
+        }
+
         _movement = new Vector3(
             _horizontalInput.x*(_isSprinting?_sprintSpeed:_walkSpeed), 
             _verticalVelocity, 
@@ -137,4 +159,14 @@ public class FPSController : Singleton<FPSController>
 
     public void ShowMesh() { _mesh.enabled = true; }
     public void HideMesh() { _mesh.enabled = false; }
+
+    public void CSMode()
+    {
+        _walkSpeed = 12f;
+        _sprintSpeed = 25f;
+        _drainRate = 0f;
+        _verticalVelocity = -9.81f;
+        _enableJump = true;
+        //transform.position = CSPlane.transform.position;
+    }
 }
